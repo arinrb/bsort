@@ -1,0 +1,65 @@
+\hypertarget{is__sorted__vec__dble_8f90}{\section{src/is\-\_\-sorted\-\_\-vec\-\_\-dble.f90 File Reference}
+\label{is__sorted__vec__dble_8f90}\index{src/is\-\_\-sorted\-\_\-vec\-\_\-dble.\-f90@{src/is\-\_\-sorted\-\_\-vec\-\_\-dble.\-f90}}
+}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+pure function \hyperlink{group__is__sorted_ga0e08c0597f2e8e32dee62cf3a9faab6a_ga0e08c0597f2e8e32dee62cf3a9faab6a}{is\-\_\-sorted\-\_\-vec\-\_\-dble} (vec, ascending)
+\begin{DoxyCompactList}\small\item\em Checks if a vector is sorted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\hypertarget{group__is__sorted_ga0e08c0597f2e8e32dee62cf3a9faab6a_ga0e08c0597f2e8e32dee62cf3a9faab6a}{\index{is\-\_\-sorted\-\_\-vec\-\_\-dble.\-f90@{is\-\_\-sorted\-\_\-vec\-\_\-dble.\-f90}!is\-\_\-sorted\-\_\-vec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dble}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dble}!is_sorted_vec_dble.f90@{is\-\_\-sorted\-\_\-vec\-\_\-dble.\-f90}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dble}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-dble (
+\begin{DoxyParamCaption}
+\item[{double precision, dimension(\-:), intent(in)}]{vec, }
+\item[{logical, intent(in)}]{ascending}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted_ga0e08c0597f2e8e32dee62cf3a9faab6a_ga0e08c0597f2e8e32dee62cf3a9faab6a}
+Checks if a vector is sorted using a specified ordering.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em is\-\_\-sorted} & Indicated if the vector is sorted in the specified order.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be checked.\\
+\hline
+{\em ascending} & Indicates if the ordering to be checked for is in ascending or decending.\\
+\hline
+\end{DoxyParams}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &Ascending order \\\cline{1-2}
+\PBS\centering false &Decending order \\\cline{1-2}
+\end{TabularC}
+\begin{DoxyNote}{Note}
+An empty or single value vector is considered sorted.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The target of is not checked within the function, care should be used that the target functon is of the right form.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 37 of file is\-\_\-sorted\-\_\-vec\-\_\-dble.\-f90.
+
+
+
+References is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble(), and is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble().
+

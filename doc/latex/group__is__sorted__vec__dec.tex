@@ -1,0 +1,144 @@
+\hypertarget{group__is__sorted__vec__dec}{\section{Is\-\_\-sorted\-\_\-vec\-\_\-dec}
+\label{group__is__sorted__vec__dec}\index{Is\-\_\-sorted\-\_\-vec\-\_\-dec@{Is\-\_\-sorted\-\_\-vec\-\_\-dec}}
+}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+logical function \hyperlink{group__is__sorted__vec__dec_gafa8f0380a781510c916f7d2315dda59c_gafa8f0380a781510c916f7d2315dda59c}{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble} (x)
+\begin{DoxyCompactList}\small\item\em Checks if a vector is sorted. \end{DoxyCompactList}\item 
+logical function \hyperlink{group__is__sorted__vec__dec_ga48c16c00ddcf8f16c23c2a4e4049f459_ga48c16c00ddcf8f16c23c2a4e4049f459}{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int} (x)
+\begin{DoxyCompactList}\small\item\em Checks if a vector is sorted. \end{DoxyCompactList}\item 
+logical function \hyperlink{group__is__sorted__vec__dec_ga0ea359f8f42c8716f34091cde59c4e97_ga0ea359f8f42c8716f34091cde59c4e97}{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real} (x)
+\begin{DoxyCompactList}\small\item\em Checks if a vector is sorted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\hypertarget{group__is__sorted__vec__dec_gafa8f0380a781510c916f7d2315dda59c_gafa8f0380a781510c916f7d2315dda59c}{\index{Is\-\_\-sorted\-\_\-vec\-\_\-dec@{Is\-\_\-sorted\-\_\-vec\-\_\-dec}!is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble}!Is_sorted_vec_dec@{Is\-\_\-sorted\-\_\-vec\-\_\-dec}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble}]{\setlength{\rightskip}{0pt plus 5cm}logical function is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble (
+\begin{DoxyParamCaption}
+\item[{double precision, dimension(\-:), intent(in)}]{x}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted__vec__dec_gafa8f0380a781510c916f7d2315dda59c_gafa8f0380a781510c916f7d2315dda59c}
+Checks if a vector is sorted in decending order.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em sorted} & Indicates if the vector is sorted.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering T &The vector is sorted \\\cline{1-2}
+\PBS\centering F &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector to be sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+In prior versions of this function, an interger was returns instread of a logical. If the vector was not sorted, than the interger would indicate the position of the first two pairwise elements where one element was larger than the following element. This proved to not be useful and was taken out. If need for this functionally is determined in the future, than it has been decided that it will be implimented in a different function, most likely wrapped in the same interface.
+
+An empty and single valued vector is considered sorted.
+
+This algorithm requires at most N -\/ 1 compares.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+01/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 32 of file is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble.\-f90.
+
+\hypertarget{group__is__sorted__vec__dec_ga48c16c00ddcf8f16c23c2a4e4049f459_ga48c16c00ddcf8f16c23c2a4e4049f459}{\index{Is\-\_\-sorted\-\_\-vec\-\_\-dec@{Is\-\_\-sorted\-\_\-vec\-\_\-dec}!is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int}!Is_sorted_vec_dec@{Is\-\_\-sorted\-\_\-vec\-\_\-dec}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}logical function is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{integer, dimension(\-:), intent(in)}]{x}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted__vec__dec_ga48c16c00ddcf8f16c23c2a4e4049f459_ga48c16c00ddcf8f16c23c2a4e4049f459}
+Checks if a vector is sorted in decending order.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em sorted} & Indicates if the vector is sorted.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering T &The vector is sorted \\\cline{1-2}
+\PBS\centering F &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector to be sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+In prior versions of this function, an interger was returns instread of a logical. If the vector was not sorted, than the interger would indicate the position of the first two pairwise elements where one element was larger than the following element. This proved to not be useful and was taken out. If need for this functionally is determined in the future, than it has been decided that it will be implimented in a different function, most likely wrapped in the same interface.
+
+An empty and single valued vector is considered sorted.
+
+This algorithm requires at most N -\/ 1 compares.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+01/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 32 of file is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int.\-f90.
+
+\hypertarget{group__is__sorted__vec__dec_ga0ea359f8f42c8716f34091cde59c4e97_ga0ea359f8f42c8716f34091cde59c4e97}{\index{Is\-\_\-sorted\-\_\-vec\-\_\-dec@{Is\-\_\-sorted\-\_\-vec\-\_\-dec}!is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real}!Is_sorted_vec_dec@{Is\-\_\-sorted\-\_\-vec\-\_\-dec}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}logical function is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:), intent(in)}]{x}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted__vec__dec_ga0ea359f8f42c8716f34091cde59c4e97_ga0ea359f8f42c8716f34091cde59c4e97}
+Checks if a vector is sorted in decending order.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em sorted} & Indicates if the vector is sorted.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering T &The vector is sorted \\\cline{1-2}
+\PBS\centering F &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector to be sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+In prior versions of this function, an interger was returns instread of a logical. If the vector was not sorted, than the interger would indicate the position of the first two pairwise elements where one element was larger than the following element. This proved to not be useful and was taken out. If need for this functionally is determined in the future, than it has been decided that it will be implimented in a different function, most likely wrapped in the same interface.
+
+An empty and single valued vector is considered sorted.
+
+This algorithm requires at most N -\/ 1 compares.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+01/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 32 of file is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real.\-f90.
+

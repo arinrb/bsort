@@ -1,0 +1,138 @@
+\hypertarget{group__is__sorted__dec}{\section{Is\-\_\-sorted\-\_\-dec}
+\label{group__is__sorted__dec}\index{Is\-\_\-sorted\-\_\-dec@{Is\-\_\-sorted\-\_\-dec}}
+}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+pure function \hyperlink{group__is__sorted__dec_gaa9e8b65733c813e5ac9874514ebe6a3f_gaa9e8b65733c813e5ac9874514ebe6a3f}{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble} (vec)
+\begin{DoxyCompactList}\small\item\em Check if a vector of double precision values is sorted by a decending order. \end{DoxyCompactList}\item 
+pure function \hyperlink{group__is__sorted__dec_ga00eb7a25d7450d6c786977253b047625_ga00eb7a25d7450d6c786977253b047625}{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int} (vec)
+\begin{DoxyCompactList}\small\item\em Check if a vector of integer values is sorted by a decending order. \end{DoxyCompactList}\item 
+pure function \hyperlink{group__is__sorted__dec_gab8a6976d6a2e892be2395b3851d9ba93_gab8a6976d6a2e892be2395b3851d9ba93}{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real} (vec)
+\begin{DoxyCompactList}\small\item\em Check if a vector of real values is sorted by a decending order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\hypertarget{group__is__sorted__dec_gaa9e8b65733c813e5ac9874514ebe6a3f_gaa9e8b65733c813e5ac9874514ebe6a3f}{\index{Is\-\_\-sorted\-\_\-dec@{Is\-\_\-sorted\-\_\-dec}!is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble}!Is_sorted_dec@{Is\-\_\-sorted\-\_\-dec}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble (
+\begin{DoxyParamCaption}
+\item[{double precision, dimension(\-:), intent(in)}]{vec}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted__dec_gaa9e8b65733c813e5ac9874514ebe6a3f_gaa9e8b65733c813e5ac9874514ebe6a3f}
+Check if a vector of double precision values is sorted by a decending order. Returns a logical value indicating if the vector is sorted.
+
+\begin{DoxyReturn}{Returns}
+is\-\_\-sorted Indicates if the vector is sorted.
+\end{DoxyReturn}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Te vec to be checked for being sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty and single value vectors are considered sorted.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 25 of file is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble.\-f90.
+
+
+
+Referenced by is\-\_\-sorted\-\_\-vec\-\_\-dble().
+
+\hypertarget{group__is__sorted__dec_ga00eb7a25d7450d6c786977253b047625_ga00eb7a25d7450d6c786977253b047625}{\index{Is\-\_\-sorted\-\_\-dec@{Is\-\_\-sorted\-\_\-dec}!is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int}!Is_sorted_dec@{Is\-\_\-sorted\-\_\-dec}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{integer, dimension(\-:), intent(in)}]{vec}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted__dec_ga00eb7a25d7450d6c786977253b047625_ga00eb7a25d7450d6c786977253b047625}
+Check if a vector of integer values is sorted by a decending order. Returns a logical value indicating if the vector is sorted.
+
+\begin{DoxyReturn}{Returns}
+is\-\_\-sorted Indicates if the vector is sorted.
+\end{DoxyReturn}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Te vec to be checked for being sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty and single value vectors are considered sorted.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 25 of file is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int.\-f90.
+
+
+
+Referenced by is\-\_\-sorted\-\_\-vec\-\_\-int().
+
+\hypertarget{group__is__sorted__dec_gab8a6976d6a2e892be2395b3851d9ba93_gab8a6976d6a2e892be2395b3851d9ba93}{\index{Is\-\_\-sorted\-\_\-dec@{Is\-\_\-sorted\-\_\-dec}!is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real}!Is_sorted_dec@{Is\-\_\-sorted\-\_\-dec}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:), intent(in)}]{vec}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted__dec_gab8a6976d6a2e892be2395b3851d9ba93_gab8a6976d6a2e892be2395b3851d9ba93}
+Check if a vector of real values is sorted by a decending order. Returns a logical value indicating if the vector is sorted.
+
+\begin{DoxyReturn}{Returns}
+is\-\_\-sorted Indicates if the vector is sorted.
+\end{DoxyReturn}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Te vec to be checked for being sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty and single value vectors are considered sorted.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 25 of file is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real.\-f90.
+
+
+
+Referenced by is\-\_\-sorted\-\_\-vec\-\_\-real().
+

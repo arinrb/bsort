@@ -1,0 +1,51 @@
+\hypertarget{is__sorted__vec__asc__dble_8f90}{\section{src/is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble.f90 File Reference}
+\label{is__sorted__vec__asc__dble_8f90}\index{src/is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble.\-f90@{src/is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble.\-f90}}
+}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+pure function \hyperlink{group__is__sorted__asc_gaf3d95274ddc8d1599184abb85157ff13_gaf3d95274ddc8d1599184abb85157ff13}{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble} (vec)
+\begin{DoxyCompactList}\small\item\em Check if a vector of double precision values is sorted by an ascending order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\hypertarget{group__is__sorted__asc_gaf3d95274ddc8d1599184abb85157ff13_gaf3d95274ddc8d1599184abb85157ff13}{\index{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble.\-f90@{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble.\-f90}!is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble}!is_sorted_vec_asc_dble.f90@{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble.\-f90}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble (
+\begin{DoxyParamCaption}
+\item[{double precision, dimension(\-:), intent(in)}]{vec}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted__asc_gaf3d95274ddc8d1599184abb85157ff13_gaf3d95274ddc8d1599184abb85157ff13}
+Check if a vector of double precision values is sorted by an ascending order. Returns a logical value indicating if the vector is sorted.
+
+\begin{DoxyReturn}{Returns}
+is\-\_\-sorted Indicates if the vector is sorted.
+\end{DoxyReturn}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Te vec to be checked for being sorted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty and single value vectors are considered sorted.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 25 of file is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble.\-f90.
+
+
+
+Referenced by is\-\_\-sorted\-\_\-vec\-\_\-dble().
+

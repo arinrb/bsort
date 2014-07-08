@@ -1,0 +1,46 @@
+\hypertarget{interchange__sort__vec__gen__map__real_8f90}{\section{src/interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real.f90 File Reference}
+\label{interchange__sort__vec__gen__map__real_8f90}\index{src/interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real.\-f90@{src/interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real.\-f90}}
+}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+pure subroutine \hyperlink{interchange__sort__vec__gen__map__real_8f90_abba86d6e3a9548e39114901965f8226f_abba86d6e3a9548e39114901965f8226f}{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real} (vec, map, ord)
+\begin{DoxyCompactList}\small\item\em Run an interchange sort on a vector of real values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\hypertarget{interchange__sort__vec__gen__map__real_8f90_abba86d6e3a9548e39114901965f8226f_abba86d6e3a9548e39114901965f8226f}{\index{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real.\-f90@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real.\-f90}!interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real}}
+\index{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real}!interchange_sort_vec_gen_map_real.f90@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real.\-f90}}
+\subsubsection[{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}pure subroutine interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:), intent(inout)}]{vec, }
+\item[{integer, dimension(\-:), intent(inout)}]{map, }
+\item[{procedure(logical)}]{ord}
+\end{DoxyParamCaption}
+)}}\label{interchange__sort__vec__gen__map__real_8f90_abba86d6e3a9548e39114901965f8226f_abba86d6e3a9548e39114901965f8226f}
+Run an interchange sort on a vector of real values. The vector of intergers map is permuted in the same way that the vector vec is permuted to be sorted. It is important that map be of equal or greather length than vec.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be sorted.\\
+\hline
+{\em map} & Vector of intergers which is permuted in the same way that vec is permuted. If map is a vector of values 1 to N, where N is the length of vec, than, map is the map from vec's original value to vec's final value after the sort.\\
+\hline
+{\em ord} & A logical function which describes the ordering used. The function must take two real arguments and return true if and only if the first argument must proceed the second argument in the order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The argument types and counts of ord are not checked within this subroutine.
+
+The length of map is not checked within this subroutine. If the length of vec is larger than the length of map, than this subroutine may attempt to access elements of map that do not exist.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 26 of file interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-map\-\_\-real.\-f90.
+

@@ -1,0 +1,41 @@
+\hypertarget{interchange__sort__vec__gen__real_8f90}{\section{src/interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-real.f90 File Reference}
+\label{interchange__sort__vec__gen__real_8f90}\index{src/interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-real.\-f90@{src/interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-real.\-f90}}
+}
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+pure subroutine \hyperlink{interchange__sort__vec__gen__real_8f90_ab07157e5432f3287a76deaa66c8331bb_ab07157e5432f3287a76deaa66c8331bb}{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-error\-\_\-real} (vec, ord)
+\begin{DoxyCompactList}\small\item\em Run an interchange sort on a vector of real values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\hypertarget{interchange__sort__vec__gen__real_8f90_ab07157e5432f3287a76deaa66c8331bb_ab07157e5432f3287a76deaa66c8331bb}{\index{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-real.\-f90@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-real.\-f90}!interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-error\-\_\-real@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-error\-\_\-real}}
+\index{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-error\-\_\-real@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-error\-\_\-real}!interchange_sort_vec_gen_real.f90@{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-real.\-f90}}
+\subsubsection[{interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-error\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}pure subroutine interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-error\-\_\-real (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:), intent(inout)}]{vec, }
+\item[{procedure(logical)}]{ord}
+\end{DoxyParamCaption}
+)}}\label{interchange__sort__vec__gen__real_8f90_ab07157e5432f3287a76deaa66c8331bb_ab07157e5432f3287a76deaa66c8331bb}
+Run an interchange sort on a vector of real values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be sorted.\\
+\hline
+{\em ord} & A logical function which describes the ordering used. The function must take two real arguments and return true if and only if the first argument must proceed the second argument in the order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The argument types and counts of ord are not checked within this subroutine.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 20 of file interchange\-\_\-sort\-\_\-vec\-\_\-gen\-\_\-real.\-f90.
+

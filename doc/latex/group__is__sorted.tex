@@ -1,0 +1,354 @@
+\hypertarget{group__is__sorted}{\section{Is\-\_\-sorted}
+\label{group__is__sorted}\index{Is\-\_\-sorted@{Is\-\_\-sorted}}
+}
+
+
+Checks if a vector is sorted.  
+
+
+\subsection*{Functions/\-Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+pure function \hyperlink{group__is__sorted_ga0e08c0597f2e8e32dee62cf3a9faab6a_ga0e08c0597f2e8e32dee62cf3a9faab6a}{is\-\_\-sorted\-\_\-vec\-\_\-dble} (vec, ascending)
+\begin{DoxyCompactList}\small\item\em Checks if a vector is sorted. \end{DoxyCompactList}\item 
+logical function \hyperlink{group__is__sorted_ga24448988ac1dd8b921b70014162f4cb2_ga24448988ac1dd8b921b70014162f4cb2}{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble} (vec, ord)
+\begin{DoxyCompactList}\small\item\em Check if a vector of double precision values is sorted by the specified order. \end{DoxyCompactList}\item 
+logical function \hyperlink{group__is__sorted_ga12a818ddd2788abf54f8d94e6ea941f6_ga12a818ddd2788abf54f8d94e6ea941f6}{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int} (vec, ord)
+\begin{DoxyCompactList}\small\item\em Check if a vector of integer values is sorted by the specified order. \end{DoxyCompactList}\item 
+logical function \hyperlink{group__is__sorted_ga31064500711fc6445efca5f98021a6ed_ga31064500711fc6445efca5f98021a6ed}{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real} (vec, ord)
+\begin{DoxyCompactList}\small\item\em Check if a vector of real values is sorted by the specified order. \end{DoxyCompactList}\item 
+pure function \hyperlink{group__is__sorted_ga80744f3ac7ffc97aae6b4802bd5279a4_ga80744f3ac7ffc97aae6b4802bd5279a4}{is\-\_\-sorted\-\_\-vec\-\_\-int} (vec, ascending)
+\begin{DoxyCompactList}\small\item\em Checks if a vector is sorted. \end{DoxyCompactList}\item 
+pure function \hyperlink{group__is__sorted_gabd13798bc9a85ec9a756a7c46cefb69a_gabd13798bc9a85ec9a756a7c46cefb69a}{is\-\_\-sorted\-\_\-vec\-\_\-real} (vec, ascending)
+\begin{DoxyCompactList}\small\item\em Checks if a vector is sorted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Checks if a vector is sorted.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em sorted} & Indicated if the vector vec is sorted in the specified order.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering T &The vector is sorted \\\cline{1-2}
+\PBS\centering F &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The vector to be sorted.\\
+\hline
+{\em sort\-\_\-type} & Indicates the ordering to be checked for. The default value is 'A'. If an invalid value is passed, than a value of not sorted is returned.\\
+\hline
+\end{DoxyParams}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering A &Ascending order \\\cline{1-2}
+\PBS\centering F &Decending order \\\cline{1-2}
+\end{TabularC}
+\begin{DoxyNote}{Note}
+In prior versions of this function, an interger was returns instread of a logical. If the vector was not sorted, than the interger would indicate the position of the first two pairwise elements where one element was larger than the following element. This proved to not be useful and was taken out. If need for this functionally is determined in the future, than it has been decided that it will be implimented in a different function, most likely wrapped in the same interface.
+
+An empty vector is considered sorted.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+01/07/2014 
+\end{DoxyDate}
+
+
+\subsection{Function/\-Subroutine Documentation}
+\hypertarget{group__is__sorted_ga0e08c0597f2e8e32dee62cf3a9faab6a_ga0e08c0597f2e8e32dee62cf3a9faab6a}{\index{Is\-\_\-sorted@{Is\-\_\-sorted}!is\-\_\-sorted\-\_\-vec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dble}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-dble}!Is_sorted@{Is\-\_\-sorted}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-dble}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-dble (
+\begin{DoxyParamCaption}
+\item[{double precision, dimension(\-:), intent(in)}]{vec, }
+\item[{logical, intent(in)}]{ascending}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted_ga0e08c0597f2e8e32dee62cf3a9faab6a_ga0e08c0597f2e8e32dee62cf3a9faab6a}
+Checks if a vector is sorted using a specified ordering.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em is\-\_\-sorted} & Indicated if the vector is sorted in the specified order.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be checked.\\
+\hline
+{\em ascending} & Indicates if the ordering to be checked for is in ascending or decending.\\
+\hline
+\end{DoxyParams}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &Ascending order \\\cline{1-2}
+\PBS\centering false &Decending order \\\cline{1-2}
+\end{TabularC}
+\begin{DoxyNote}{Note}
+An empty or single value vector is considered sorted.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The target of is not checked within the function, care should be used that the target functon is of the right form.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 37 of file is\-\_\-sorted\-\_\-vec\-\_\-dble.\-f90.
+
+
+
+References is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-dble(), and is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-dble().
+
+\hypertarget{group__is__sorted_ga24448988ac1dd8b921b70014162f4cb2_ga24448988ac1dd8b921b70014162f4cb2}{\index{Is\-\_\-sorted@{Is\-\_\-sorted}!is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble@{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble}!Is_sorted@{Is\-\_\-sorted}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble}]{\setlength{\rightskip}{0pt plus 5cm}logical function is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble (
+\begin{DoxyParamCaption}
+\item[{double precision, dimension(\-:), intent(in)}]{vec, }
+\item[{procedure(logical)}]{ord}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted_ga24448988ac1dd8b921b70014162f4cb2_ga24448988ac1dd8b921b70014162f4cb2}
+Check if a vector of double precision values is sorted by the specified order. Returns a logical value indicating if the vector is sorted.
+
+\begin{DoxyReturn}{Returns}
+is\-\_\-sorted Indicates if the vector is sorted.
+\end{DoxyReturn}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Te vec to be checked for being sorted.\\
+\hline
+{\em ord} & A logical function which describes the ordering used. The function must take two double precision arguments and return true if and only if the first argument must proceed the second argument in the order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty and single value vectors are considered sorted.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The argument types and counts of ord are not checked within this function.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 31 of file is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-dble.\-f90.
+
+\hypertarget{group__is__sorted_ga12a818ddd2788abf54f8d94e6ea941f6_ga12a818ddd2788abf54f8d94e6ea941f6}{\index{Is\-\_\-sorted@{Is\-\_\-sorted}!is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int}!Is_sorted@{Is\-\_\-sorted}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}logical function is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{integer, dimension(\-:), intent(in)}]{vec, }
+\item[{procedure(logical)}]{ord}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted_ga12a818ddd2788abf54f8d94e6ea941f6_ga12a818ddd2788abf54f8d94e6ea941f6}
+Check if a vector of integer values is sorted by the specified order. Returns a logical value indicating if the vector is sorted.
+
+\begin{DoxyReturn}{Returns}
+is\-\_\-sorted Indicates if the vector is sorted.
+\end{DoxyReturn}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Te vec to be checked for being sorted.\\
+\hline
+{\em ord} & A logical function which describes the ordering used. The function must take two integer arguments and return true if and only if the first argument must proceed the second argument in the order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty and single value vectors are considered sorted.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The argument types and counts of ord are not checked within this function.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 31 of file is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-int.\-f90.
+
+\hypertarget{group__is__sorted_ga31064500711fc6445efca5f98021a6ed_ga31064500711fc6445efca5f98021a6ed}{\index{Is\-\_\-sorted@{Is\-\_\-sorted}!is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real}!Is_sorted@{Is\-\_\-sorted}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}logical function is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:), intent(in)}]{vec, }
+\item[{procedure(logical)}]{ord}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted_ga31064500711fc6445efca5f98021a6ed_ga31064500711fc6445efca5f98021a6ed}
+Check if a vector of real values is sorted by the specified order. Returns a logical value indicating if the vector is sorted.
+
+\begin{DoxyReturn}{Returns}
+is\-\_\-sorted Indicates if the vector is sorted.
+\end{DoxyReturn}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Te vec to be checked for being sorted.\\
+\hline
+{\em ord} & A logical function which describes the ordering used. The function must take two real arguments and return true if and only if the first argument must proceed the second argument in the order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Empty and single value vectors are considered sorted.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The argument types and counts of ord are not checked within this function.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 31 of file is\-\_\-sorted\-\_\-vec\-\_\-gen\-\_\-real.\-f90.
+
+\hypertarget{group__is__sorted_ga80744f3ac7ffc97aae6b4802bd5279a4_ga80744f3ac7ffc97aae6b4802bd5279a4}{\index{Is\-\_\-sorted@{Is\-\_\-sorted}!is\-\_\-sorted\-\_\-vec\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-int}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-int@{is\-\_\-sorted\-\_\-vec\-\_\-int}!Is_sorted@{Is\-\_\-sorted}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{integer, dimension(\-:), intent(in)}]{vec, }
+\item[{logical, intent(in)}]{ascending}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted_ga80744f3ac7ffc97aae6b4802bd5279a4_ga80744f3ac7ffc97aae6b4802bd5279a4}
+Checks if a vector is sorted using a specified ordering.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em is\-\_\-sorted} & Indicated if the vector is sorted in the specified order.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be checked.\\
+\hline
+{\em ascending} & Indicates if the ordering to be checked for is in ascending or decending.\\
+\hline
+\end{DoxyParams}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &Ascending order \\\cline{1-2}
+\PBS\centering false &Decending order \\\cline{1-2}
+\end{TabularC}
+\begin{DoxyNote}{Note}
+An empty or single value vector is considered sorted.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The target of is not checked within the function, care should be used that the target functon is of the right form.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 37 of file is\-\_\-sorted\-\_\-vec\-\_\-int.\-f90.
+
+
+
+References is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-int(), and is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-int().
+
+\hypertarget{group__is__sorted_gabd13798bc9a85ec9a756a7c46cefb69a_gabd13798bc9a85ec9a756a7c46cefb69a}{\index{Is\-\_\-sorted@{Is\-\_\-sorted}!is\-\_\-sorted\-\_\-vec\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-real}}
+\index{is\-\_\-sorted\-\_\-vec\-\_\-real@{is\-\_\-sorted\-\_\-vec\-\_\-real}!Is_sorted@{Is\-\_\-sorted}}
+\subsubsection[{is\-\_\-sorted\-\_\-vec\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}pure function is\-\_\-sorted\-\_\-vec\-\_\-real (
+\begin{DoxyParamCaption}
+\item[{real, dimension(\-:), intent(in)}]{vec, }
+\item[{logical, intent(in)}]{ascending}
+\end{DoxyParamCaption}
+)}}\label{group__is__sorted_gabd13798bc9a85ec9a756a7c46cefb69a_gabd13798bc9a85ec9a756a7c46cefb69a}
+Checks if a vector is sorted using a specified ordering.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em is\-\_\-sorted} & Indicated if the vector is sorted in the specified order.\\
+\hline
+\end{DoxyRetVals}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &The vector is sorted \\\cline{1-2}
+\PBS\centering false &The vector is not sorted \\\cline{1-2}
+\end{TabularC}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to be checked.\\
+\hline
+{\em ascending} & Indicates if the ordering to be checked for is in ascending or decending.\\
+\hline
+\end{DoxyParams}
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}\PBS\centering {\bf Value }&{\bf Meaning  }\\\cline{1-2}
+\PBS\centering true &Ascending order \\\cline{1-2}
+\PBS\centering false &Decending order \\\cline{1-2}
+\end{TabularC}
+\begin{DoxyNote}{Note}
+An empty or single value vector is considered sorted.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The target of is not checked within the function, care should be used that the target functon is of the right form.
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Arin R. Bratt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/07/2014 
+\end{DoxyDate}
+
+
+Definition at line 37 of file is\-\_\-sorted\-\_\-vec\-\_\-real.\-f90.
+
+
+
+References is\-\_\-sorted\-\_\-vec\-\_\-asc\-\_\-real(), and is\-\_\-sorted\-\_\-vec\-\_\-dec\-\_\-real().
+
