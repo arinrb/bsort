@@ -1,0 +1,56 @@
+.TH "src/is_sorted_vec_dec_real.f90" 3 "Mon Jul 7 2014" "Version 1.0" "BSort" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/is_sorted_vec_dec_real.f90 \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "pure function \fBis_sorted_vec_dec_real\fP (vec)"
+.br
+.RI "\fICheck if a vector of real values is sorted by a decending order\&. \fP"
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "pure function is_sorted_vec_dec_real (real, dimension(:), intent(in)vec)"
+Check if a vector of real values is sorted by a decending order\&. Returns a logical value indicating if the vector is sorted\&.
+.PP
+\fBReturns:\fP
+.RS 4
+is_sorted Indicates if the vector is sorted\&.
+.RE
+.PP
+Value Meaning  true The vector is sorted false The vector is not sorted 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvec\fP Te vec to be checked for being sorted\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Empty and single value vectors are considered sorted\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+05/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file is_sorted_vec_dec_real\&.f90\&.
+.PP
+Referenced by is_sorted_vec_real()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BSort from the source code\&.

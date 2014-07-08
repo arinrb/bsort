@@ -1,0 +1,49 @@
+.TH "src/interchange_sort_vec_gen_real.f90" 3 "Mon Jul 7 2014" "Version 1.0" "BSort" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/interchange_sort_vec_gen_real.f90 \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "pure subroutine \fBinterchange_sort_vec_gen_error_real\fP (vec, ord)"
+.br
+.RI "\fIRun an interchange sort on a vector of real values\&. \fP"
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "pure subroutine interchange_sort_vec_gen_error_real (real, dimension(:), intent(inout)vec, procedure(logical)ord)"
+Run an interchange sort on a vector of real values\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvec\fP The vector to be sorted\&.
+.br
+\fIord\fP A logical function which describes the ordering used\&. The function must take two real arguments and return true if and only if the first argument must proceed the second argument in the order\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The argument types and counts of ord are not checked within this subroutine\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+07/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file interchange_sort_vec_gen_real\&.f90\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BSort from the source code\&.

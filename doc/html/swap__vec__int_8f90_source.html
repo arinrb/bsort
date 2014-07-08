@@ -108,29 +108,30 @@ $(document).ready(function(){initNavTree('swap__vec__int_8f90_source.html','');}
 </div><!--header-->
 <div class="contents">
 <a href="swap__vec__int_8f90.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="group__swap_ga743926feb6c42fb3db89500ca5334f28.html#ga743926feb6c42fb3db89500ca5334f28">   17</a></span>&#160;<span class="keyword">pure subroutine </span><a class="code" href="group__swap_ga743926feb6c42fb3db89500ca5334f28.html#ga743926feb6c42fb3db89500ca5334f28">swap_vec_int</a>(x,y)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="comment">! Arguments</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(inout)</span> :: x</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(inout)</span> :: y</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">! Variables</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">integer</span> :: temp</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">! Main</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  temp = x</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  x = y</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  y = temp</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="group__swap_ga743926feb6c42fb3db89500ca5334f28.html#ga743926feb6c42fb3db89500ca5334f28">swap_vec_int</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="group__swap_gac0a0ed9dcd712fe69acd04a555d86769.html#gac0a0ed9dcd712fe69acd04a555d86769">   20</a></span>&#160;<span class="keyword">pure subroutine </span><a class="code" href="group__swap_gac0a0ed9dcd712fe69acd04a555d86769.html#gac0a0ed9dcd712fe69acd04a555d86769">swap_vec_int</a>(vec,x,y)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">! Arguments</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(inout)</span> :: vec(:)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: x</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: y</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">! Variables</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">integer</span> :: temp</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">! Main</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  temp = vec(x)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  vec(x) = vec(y)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  vec(y) = temp</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="group__swap_gac0a0ed9dcd712fe69acd04a555d86769.html#gac0a0ed9dcd712fe69acd04a555d86769">swap_vec_int</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="swap__vec__int_8f90.html">swap_vec_int.f90</a></li>
-    <li class="footer">Generated on Mon Jul 7 2014 19:12:03 for BSort by
+    <li class="footer">Generated on Mon Jul 7 2014 19:26:13 for BSort by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

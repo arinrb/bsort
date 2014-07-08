@@ -1,0 +1,209 @@
+.TH "Swap" 3 "Mon Jul 7 2014" "Version 1.0" "BSort" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Swap \- 
+.PP
+Swap two values\&.  
+
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "pure subroutine \fBswap_dble\fP (x, y)"
+.br
+.RI "\fISwap two double precision values\&. \fP"
+.ti -1c
+.RI "pure subroutine \fBswap_int\fP (x, y)"
+.br
+.RI "\fISwap two integer values\&. \fP"
+.ti -1c
+.RI "pure subroutine \fBswap_real\fP (x, y)"
+.br
+.RI "\fISwap two real values\&. \fP"
+.ti -1c
+.RI "pure subroutine \fBswap_vec_dble\fP (vec, x, y)"
+.br
+.RI "\fISwap two values in #DATA_DOCREF# vector\&. \fP"
+.ti -1c
+.RI "pure subroutine \fBswap_vec_int\fP (vec, x, y)"
+.br
+.RI "\fISwap two values in #DATA_DOCREF# vector\&. \fP"
+.ti -1c
+.RI "pure subroutine \fBswap_vec_real\fP (vec, x, y)"
+.br
+.RI "\fISwap two values in #DATA_DOCREF# vector\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Swap two values or swap two values in a vector\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+07/07/2014 
+.RE
+.PP
+
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "pure subroutine swap_dble (double precision, intent(inout)x, double precision, intent(inout)y)"
+Swap two double precision values\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP The first value to be swapped\&.
+.br
+\fIy\fP The second value to be swapped\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+05/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file swap_dble\&.f90\&.
+.SS "pure subroutine swap_int (integer, intent(inout)x, integer, intent(inout)y)"
+Swap two integer values\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP The first value to be swapped\&.
+.br
+\fIy\fP The second value to be swapped\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+05/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file swap_int\&.f90\&.
+.SS "pure subroutine swap_real (real, intent(inout)x, real, intent(inout)y)"
+Swap two real values\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP The first value to be swapped\&.
+.br
+\fIy\fP The second value to be swapped\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+05/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file swap_real\&.f90\&.
+.SS "pure subroutine swap_vec_dble (double precision, dimension(:), intent(inout)vec, integer, intent(in)x, integer, intent(in)y)"
+Swap two values in #DATA_DOCREF# vector\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP The index of the first value to be swapped\&.
+.br
+\fIy\fP The index of the second value to be swapped\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The values of x and y are not checked to be inside vec\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+07/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file swap_vec_dble\&.f90\&.
+.SS "pure subroutine swap_vec_int (integer, dimension(:), intent(inout)vec, integer, intent(in)x, integer, intent(in)y)"
+Swap two values in #DATA_DOCREF# vector\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP The index of the first value to be swapped\&.
+.br
+\fIy\fP The index of the second value to be swapped\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The values of x and y are not checked to be inside vec\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+07/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file swap_vec_int\&.f90\&.
+.SS "pure subroutine swap_vec_real (real, dimension(:), intent(inout)vec, integer, intent(in)x, integer, intent(in)y)"
+Swap two values in #DATA_DOCREF# vector\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP The index of the first value to be swapped\&.
+.br
+\fIy\fP The index of the second value to be swapped\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The values of x and y are not checked to be inside vec\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+07/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file swap_vec_real\&.f90\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BSort from the source code\&.

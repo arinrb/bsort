@@ -1,0 +1,53 @@
+.TH "src/interchange_sort_vec_gen_map_int.f90" 3 "Mon Jul 7 2014" "Version 1.0" "BSort" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/interchange_sort_vec_gen_map_int.f90 \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions/Subroutines"
+
+.in +1c
+.ti -1c
+.RI "pure subroutine \fBinterchange_sort_vec_gen_map_int\fP (vec, map, ord)"
+.br
+.RI "\fIRun an interchange sort on a vector of integer values\&. \fP"
+.in -1c
+.SH "Function/Subroutine Documentation"
+.PP 
+.SS "pure subroutine interchange_sort_vec_gen_map_int (integer, dimension(:), intent(inout)vec, integer, dimension(:), intent(inout)map, procedure(logical)ord)"
+Run an interchange sort on a vector of integer values\&. The vector of intergers map is permuted in the same way that the vector vec is permuted to be sorted\&. It is important that map be of equal or greather length than vec\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvec\fP The vector to be sorted\&.
+.br
+\fImap\fP Vector of intergers which is permuted in the same way that vec is permuted\&. If map is a vector of values 1 to N, where N is the length of vec, than, map is the map from vec's original value to vec's final value after the sort\&.
+.br
+\fIord\fP A logical function which describes the ordering used\&. The function must take two integer arguments and return true if and only if the first argument must proceed the second argument in the order\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The argument types and counts of ord are not checked within this subroutine\&.
+.PP
+The length of map is not checked within this subroutine\&. If the length of vec is larger than the length of map, than this subroutine may attempt to access elements of map that do not exist\&.
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Arin R\&. Bratt 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+07/07/2014 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file interchange_sort_vec_gen_map_int\&.f90\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for BSort from the source code\&.

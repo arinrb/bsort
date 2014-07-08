@@ -37,6 +37,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "is_sorted_vec_gen_real.f90", "is__sorted__vec__gen__real_8f90.html", "is__sorted__vec__gen__real_8f90" ],
     [ "is_sorted_vec_int.f90", "is__sorted__vec__int_8f90.html", "is__sorted__vec__int_8f90" ],
     [ "is_sorted_vec_real.f90", "is__sorted__vec__real_8f90.html", "is__sorted__vec__real_8f90" ],
+    [ "swap_dble.f90", "swap__dble_8f90.html", "swap__dble_8f90" ],
+    [ "swap_int.f90", "swap__int_8f90.html", "swap__int_8f90" ],
+    [ "swap_real.f90", "swap__real_8f90.html", "swap__real_8f90" ],
     [ "swap_vec_dble.f90", "swap__vec__dble_8f90.html", "swap__vec__dble_8f90" ],
     [ "swap_vec_int.f90", "swap__vec__int_8f90.html", "swap__vec__int_8f90" ],
     [ "swap_vec_real.f90", "swap__vec__real_8f90.html", "swap__vec__real_8f90" ]
