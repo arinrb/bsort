@@ -1,0 +1,117 @@
+! Order elements ascending by sin(x)
+module ord
+  implicit none
+contains
+  function ordi(x,y) result(out)
+    integer :: x,y
+    logical :: out
+    out = .false.
+    if (sin(dble(x)) > sin(dble(y))) out = .true.
+  end function ordi
+
+  function ordr(x,y) result(out)
+    real :: x,y
+    logical :: out
+    out = .false.
+    if (sin(x) > sin(y)) out = .true.
+  end function ordr
+
+  function ordd(x,y) result(out)
+    double precision:: x,y
+    logical :: out
+    out = .false.
+    if (sin(x) > sin(y)) out = .true.
+  end function ordd
+end module ord
+
+
+
+program test_is_sorted
+  use bsort
+  use ord
+  integer, parameter :: n = 10000
+
+  double precision :: asc(n)
+  double precision :: dec(n)
+  double precision :: uns(n)
+  double precision :: ors(n)
+
+  integer :: i
+  procedure(logical), pointer :: p => null()
+  character :: sort_type
+  
+  call random_number(uns)
+  uns = (uns - .5) * 100.0
+  ors = uns
+  asc(1) = uns(1)
+  dec(1) = uns(1)
+  do i = 2,n
+     asc(i) = asc(i - 1) + abs(uns(i))
+     dec(i) = dec(i - 1) - abs(uns(i))
+     if (sin(ors(i)) < sin(ors(i - 1))) ors(i) = ors(i - 1)
+  end do
+
+  ! Check ascending
+  print *,"Check ascending"
+  sort_type = 'A'
+  print '(T20,"ASCENDING (T)",T35,"DECENDING (F)",T50,"SORTED BY SIN (F)",T70,"UNSORTED (F)")'
+  print '("INTEGER",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(int(asc),sort_type),&
+       is_sorted(int(dec),sort_type),&
+       is_sorted(int(ors),sort_type),&
+       is_sorted(int(uns),sort_type)
+  print '("REAL",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(real(asc),sort_type),&
+       is_sorted(real(dec),sort_type),&
+       is_sorted(real(ors),sort_type),&
+       is_sorted(real(uns),sort_type)
+  print '("DOUBLE PRECISION",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(dble(asc),sort_type),&
+       is_sorted(dble(dec),sort_type),&
+       is_sorted(dble(ors),sort_type),&
+       is_sorted(dble(uns),sort_type)
+  print *
+  ! Check decending
+  print *,"Check decending"
+  sort_type = 'D'
+  print '(T20,"ASCENDING (F)",T35,"DECENDING (T)",T50,"SORTED BY SIN (F)",T70,"UNSORTED (F)")'
+  print '("INTEGER",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(int(asc),sort_type),&
+       is_sorted(int(dec),sort_type),&
+       is_sorted(int(ors),sort_type),&
+       is_sorted(int(uns),sort_type)
+  print '("REAL",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(real(asc),sort_type),&
+       is_sorted(real(dec),sort_type),&
+       is_sorted(real(ors),sort_type),&
+       is_sorted(real(uns),sort_type)
+  print '("DOUBLE PRECISION",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(dble(asc),sort_type),&
+       is_sorted(dble(dec),sort_type),&
+       is_sorted(dble(ors),sort_type),&
+       is_sorted(dble(uns),sort_type)
+  print *
+  ! Check generic sorting by sin(x)
+ print *,"Check generic, using x > y iff sin(x) > sin(y)"
+  sort_type = 'G'
+  print '(T20,"ASCENDING (F)",T35,"DECENDING (F)",T50,"SORTED BY SIN (T)",T70,"UNSORTED (F)")'
+  p => ordi
+  print '("INTEGER",T20,L,T35,L,T50,A6,T70,L)',&
+       is_sorted(int(asc),sort_type,p),&
+       is_sorted(int(dec),sort_type,p),&
+       "Omiteed",&
+       is_sorted(int(uns),sort_type,p)
+  p => ordr
+  print '("REAL",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(real(asc),sort_type,p),&
+       is_sorted(real(dec),sort_type,p),&
+       is_sorted(real(ors),sort_type,p),&
+       is_sorted(real(uns),sort_type,p)
+  p => ordd
+  print '("DOUBLE PRECISION",T20,L,T35,L,T50,L,T70,L)',&
+       is_sorted(dble(asc),sort_type,p),&
+       is_sorted(dble(dec),sort_type,p),&
+       is_sorted(dble(ors),sort_type,p),&
+       is_sorted(dble(uns),sort_type,p)
+   print *
+end program test_is_sorted

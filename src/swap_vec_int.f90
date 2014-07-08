@@ -1,0 +1,32 @@
+!> @ingroup swap
+!> 
+!> @brief 
+!> Swap two values. 
+!>
+!> @detials 
+!> Swap two integer values.
+!>
+!> @param x
+!> First value to be swapped.
+!> 
+!> @param y
+!> Second value to be swapped.
+!> 
+!> @author Arin R. Bratt
+!> @date 05/07/2014
+pure subroutine swap_vec_int(x,y)
+  ! Arguments
+  integer, intent(inout) :: x
+  integer, intent(inout) :: y
+  
+  ! Variables
+  integer :: temp
+
+  ! Main
+  temp = x
+  x = y
+  y = temp
+
+end subroutine swap_vec_int
+
+
