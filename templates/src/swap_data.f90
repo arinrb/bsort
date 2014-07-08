@@ -14,7 +14,7 @@
 !> 
 !> @author Arin R. Bratt
 !> @date 05/07/2014
-pure subroutine swap_#DATA_NAME#(x,y)
+elemental subroutine swap_#DATA_NAME#(x,y)
   ! Arguments
   #DATA_FULL#, intent(inout) :: x
   #DATA_FULL#, intent(inout) :: y
