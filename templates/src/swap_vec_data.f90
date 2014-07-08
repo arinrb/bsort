@@ -19,9 +19,9 @@
 !> @date 07/07/2014
 pure subroutine swap_vec_#DATA_NAME#(vec,x,y)
   ! Arguments
-  #DATA_FULL#, intent(inout) :: vec
-  integer :: intent(in) :: x
-  integer :: intent(in) :: y
+  #DATA_FULL#, intent(inout) :: vec(:)
+  integer, intent(in) :: x
+  integer, intent(in) :: y
 
   ! Variables
   #DATA_FULL# :: temp

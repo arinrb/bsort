@@ -1,20 +1,20 @@
 !> @ingroup swap
 !> 
 !> @brief 
-!> Swap two values. 
+!> Swap two double precision values. 
 !>
 !> @detials 
 !> Swap two double precision values.
 !>
 !> @param x
-!> First value to be swapped.
+!> The first value to be swapped.
 !> 
 !> @param y
-!> Second value to be swapped.
+!> The second value to be swapped.
 !> 
 !> @author Arin R. Bratt
 !> @date 05/07/2014
-pure subroutine swap_vec_dble(x,y)
+pure subroutine swap_dble(x,y)
   ! Arguments
   double precision, intent(inout) :: x
   double precision, intent(inout) :: y
@@ -27,6 +27,6 @@ pure subroutine swap_vec_dble(x,y)
   x = y
   y = temp
 
-end subroutine swap_vec_dble
+end subroutine swap_dble
 
 

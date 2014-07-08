@@ -97,6 +97,5 @@ clean:
 	rm -rfv ${BINPATH}*
 	rm -fv ${LIBPATH}${LIBPREFIX}${NAME}${LIBEXT}
 	rm -fv ${INCPATH}${NAME}${MODEXT}
-	rm -rfv ${DOC}
 	rm -rfv *${EXEEXT}
 
