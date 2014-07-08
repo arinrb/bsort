@@ -6,7 +6,7 @@ module bsort
 
   !> The maximium length of a vector to be sorted using an interchange sort.
   integer, private, save :: max_interchange_sort_size = 20
-
+  
   !> @ingroup bsort
   !> @defgroup interchange_sort
   interface interchange_sort
