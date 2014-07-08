@@ -93,8 +93,8 @@ test_is_sorted: test
 clean:
 	rm -rfv *#
 	rm -rfv *~
-	rm -rfv ${OBJPATH}*
-	rm -rfv ${BINPATH}*
+	rm -rfv *${OBJPATH}*
+	rm -rfv *${BINPATH}*
 	rm -fv ${LIBPATH}${LIBPREFIX}${NAME}${LIBEXT}
 	rm -fv ${INCPATH}${NAME}${MODEXT}
 	rm -rfv *${EXEEXT}
