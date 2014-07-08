@@ -1,17 +1,17 @@
-!> @ingroup interchange_sort_vec_dec
+!> @ingroup interchange_sort_dec
 !> 
 !> @brief 
 !> Run an interchange sort on a vector of double precision values. 
 !>
-!> @detials 
-!> Run an interchange sort on a vector of double precision values. 
+!> @details 
+!> Run an interchange sort on a vector of double precision values to sort them in a decending order. 
 !>
 !> @param vec
 !> The vector to be sorted.
 !>
 !> @author Arin R. Bratt
 !> @date 07/07/2014
-pure subroutine interchange_sort_vec_dec_ERROR_dble(vec)
+pure subroutine interchange_sort_vec_dec_dble(vec)
   ! Arguments
   double precision, intent(inout) :: vec(:)
   
@@ -26,6 +26,6 @@ pure subroutine interchange_sort_vec_dec_ERROR_dble(vec)
         call swap(vec(i),vec(i + j - 1))
      end if
   end do
-end subroutine interchange_sort_vec_dec_ERROR_dble
+end subroutine interchange_sort_vec_dec_dble
 
 

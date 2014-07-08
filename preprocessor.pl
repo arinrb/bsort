@@ -40,15 +40,18 @@ my %data =
     (
      int => {
 	 name => 'int',
-	 full => 'integer'
+	 full => 'integer',
+	 docRef => 'an integer'
      },
      real => {
 	 name => 'real',
-	 full => 'real'
+	 full => 'real',
+	 docRef => 'a real'
      },
      dble => {
 	 name => 'dble',
-	 full => 'double precision'
+	 full => 'double precision',
+	 docRef => 'a double precision'
      }
     );
 
@@ -109,16 +112,23 @@ sub processTemplate {
 		    my $skip = 0;
 
 		    # Basic substitutions
+		    s/_#MAP_NAME#//g if ($map eq 'false');
 		    s/#MAP_NAME#/$map{$map}{name}/g;
 		    s/#MAP_VAR#/$map{$map}{var}/g;
 		    s/#MAP_ARG#/$map{$map}{arg}/g;
 		    s/#DATA_NAME#/$data{$data}{name}/g;
 		    s/#DATA_FULL#/$data{$data}{full}/g;
+		    s/#DATA_DOCREF#/$data{$data}{docRef}/g;
 		    s/#ORD_NAME#/$ord{$ord}{name}/g;
 		    s/#ORD_FULL#/$ord{$ord}{full}/g;
 		    s/#ORD_DOCREF#/$ord{$ord}{docRef}/g;
 		    s/#ORD_VAR#/$ord{$ord}{var}/g;
 		    s/#ORD_ARG#/$ord{$ord}{arg}/g;
+
+		    # Convert data to type
+		    while (/#CON#.+?#/){
+			s/#CON#(.+?)#/$data{$data}{name}($1)/;
+		    }
 
 		    # Comments
 		    $skip = 1 if (/#CC#/);
@@ -194,6 +204,7 @@ sub processTemplate {
 		    # Add line to text
 #		    print $_."\n" unless $skip == 1;
 		    $text .= $_."\n" unless $skip == 1;
+
 		}
    
 		# Close input file

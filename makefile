@@ -47,6 +47,9 @@ endif
 #Test path
 TESTPATH=test/
 
+#Template path
+TEMPPATH=templates/
+
 #SRC
 SRC=src/
 
@@ -90,12 +93,37 @@ test_is_sorted: test
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_is_sorted${EXEEXT} ${TESTPATH}${SRC}test_is_sorted.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
 	rm -rfv ord.mod
 	${TESTPATH}${BINPATH}test_is_sorted${EXEEXT}
+
+test_interchange_sort_int: test
+	@echo "Build test_interchange_sort_int"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT} ${TESTPATH}${SRC}test_interchange_sort_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT}
+
+test_interchange_sort_real: test
+	@echo "Build test_interchange_sort_real"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT} ${TESTPATH}${SRC}test_interchange_sort_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT}
+
+test_interchange_sort_dble: test
+	@echo "Build test_interchange_sort_dble"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_dble${EXEEXT} ${TESTPATH}${SRC}test_interchange_sort_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_interchange_sort_dble${EXEEXT}
+
+test_interchange_sort: test_interchange_sort_int test_interchange_sort_real test_interchange_sort_dble 
+
 clean:
-	rm -rfv *#
-	rm -rfv *~
+	rm -rfv /*#
+	rm -rfv /*~
 	rm -rfv *${OBJPATH}*
 	rm -rfv *${BINPATH}*
 	rm -fv ${LIBPATH}${LIBPREFIX}${NAME}${LIBEXT}
 	rm -fv ${INCPATH}${NAME}${MODEXT}
 	rm -rfv *${EXEEXT}
-
+	rm -rfv *.mod
+	rm -rfv ${TEMPPATH}${TESTPATH}*~
+	rm -rfv ${TEMPPATH}${SRC}*~
+	rm -rfv ${TESTPATH}*~
+	rm -rfv ${SRC}*~

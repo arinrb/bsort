@@ -3,7 +3,7 @@
 !> @brief 
 !> Swap two integer values. 
 !>
-!> @detials 
+!> @details 
 !> Swap two integer values.
 !>
 !> @param x

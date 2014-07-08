@@ -1,10 +1,10 @@
-!> @ingroup interchange_sort_vec_asc
+!> @ingroup interchange_sort_asc
 !> 
 !> @brief 
 !> Run an interchange sort on a vector of real values. 
 !>
-!> @detials 
-!> Run an interchange sort on a vector of real values. The vector of intergers map is permuted in the same way that the vector vec is permuted to be sorted. It is important that map be of equal or greather length than vec.
+!> @details 
+!> Run an interchange sort on a vector of real values to sort them in an ascending order. The vector of intergers map is permuted in the same way that the vector vec is permuted to be sorted. It is important that map be of equal or greather length than vec.
 !>
 !> @param vec
 !> The vector to be sorted.

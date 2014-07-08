@@ -3,8 +3,11 @@
 !> @brief 
 !> Swap two values in #DATA_DOCREF# vector. 
 !>
-!> @detials 
+!> @details 
 !> Swap two values in #DATA_DOCREF# vector.
+!>
+!> @param vec
+!> Vector from which the two values will be swapped.
 !>
 !> @param x
 !> The index of the first value to be swapped.

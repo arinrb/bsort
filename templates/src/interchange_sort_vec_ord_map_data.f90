@@ -1,10 +1,10 @@
-!> @ingroup interchange_sort_vec_#ORD_NAME#
+!> @ingroup interchange_sort_#ORD_NAME#
 !> 
 !> @brief 
 !> Run an interchange sort on a vector of #DATA_FULL# values. 
 !>
-!> @detials 
-!> Run an interchange sort on a vector of #DATA_FULL# values. #IF#MAP#THEN#The vector of intergers #MAP_NAME# is permuted in the same way that the vector vec is permuted to be sorted. It is important that #MAP_VAR# be of equal or greather length than vec.#ENDIF#
+!> @details 
+!> Run an interchange sort on a vector of #DATA_FULL# values to sort them in #ORD_DOCREF# order. #IF#MAP#THEN#The vector of intergers #MAP_NAME# is permuted in the same way that the vector vec is permuted to be sorted. It is important that #MAP_VAR# be of equal or greather length than vec.#ENDIF#
 !>
 !> @param vec
 !> The vector to be sorted.
@@ -23,7 +23,7 @@
 #IF#MAP#!> 
 !> @author Arin R. Bratt
 !> @date 07/07/2014
-pure subroutine interchange_sort_vec_#ORD_NAME#_#MAP_NAME#_#DATA_NAME#(vec#MAP_ARG##ORD_ARG#)
+#IF#ORD#gen#THEN##ELSE#pure#ENDIF# subroutine interchange_sort_vec_#ORD_NAME#_#MAP_NAME#_#DATA_NAME#(vec#MAP_ARG##ORD_ARG#)
   ! Arguments
   #DATA_FULL#, intent(inout) :: vec(:)
   #IF#MAP#integer, intent(inout) :: #MAP_VAR#(:)

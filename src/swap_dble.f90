@@ -3,7 +3,7 @@
 !> @brief 
 !> Swap two double precision values. 
 !>
-!> @detials 
+!> @details 
 !> Swap two double precision values.
 !>
 !> @param x

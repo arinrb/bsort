@@ -1,10 +1,10 @@
-!> @ingroup interchange_sort_vec_gen
+!> @ingroup interchange_sort_gen
 !> 
 !> @brief 
 !> Run an interchange sort on a vector of real values. 
 !>
-!> @detials 
-!> Run an interchange sort on a vector of real values. The vector of intergers map is permuted in the same way that the vector vec is permuted to be sorted. It is important that map be of equal or greather length than vec.
+!> @details 
+!> Run an interchange sort on a vector of real values to sort them in the specified order. The vector of intergers map is permuted in the same way that the vector vec is permuted to be sorted. It is important that map be of equal or greather length than vec.
 !>
 !> @param vec
 !> The vector to be sorted.
@@ -23,7 +23,7 @@
 !> 
 !> @author Arin R. Bratt
 !> @date 07/07/2014
-pure subroutine interchange_sort_vec_gen_map_real(vec,map,ord)
+ subroutine interchange_sort_vec_gen_map_real(vec,map,ord)
   ! Arguments
   real, intent(inout) :: vec(:)
   integer, intent(inout) :: map(:)

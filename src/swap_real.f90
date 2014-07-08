@@ -3,7 +3,7 @@
 !> @brief 
 !> Swap two real values. 
 !>
-!> @detials 
+!> @details 
 !> Swap two real values.
 !>
 !> @param x

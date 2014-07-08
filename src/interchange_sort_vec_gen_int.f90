@@ -1,10 +1,10 @@
-!> @ingroup interchange_sort_vec_gen
+!> @ingroup interchange_sort_gen
 !> 
 !> @brief 
 !> Run an interchange sort on a vector of integer values. 
 !>
-!> @detials 
-!> Run an interchange sort on a vector of integer values. 
+!> @details 
+!> Run an interchange sort on a vector of integer values to sort them in the specified order. 
 !>
 !> @param vec
 !> The vector to be sorted.
@@ -17,7 +17,7 @@
 !> 
 !> @author Arin R. Bratt
 !> @date 07/07/2014
-pure subroutine interchange_sort_vec_gen_ERROR_int(vec,ord)
+ subroutine interchange_sort_vec_gen_int(vec,ord)
   ! Arguments
   integer, intent(inout) :: vec(:)
   procedure(logical) :: ord
@@ -34,6 +34,6 @@ pure subroutine interchange_sort_vec_gen_ERROR_int(vec,ord)
         end if
      end do
   end do
-end subroutine interchange_sort_vec_gen_ERROR_int
+end subroutine interchange_sort_vec_gen_int
 
 

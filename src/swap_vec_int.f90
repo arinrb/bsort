@@ -1,10 +1,13 @@
 !> @ingroup swap
 !> 
 !> @brief 
-!> Swap two values in #DATA_DOCREF# vector. 
+!> Swap two values in an integer vector. 
 !>
-!> @detials 
-!> Swap two values in #DATA_DOCREF# vector.
+!> @details 
+!> Swap two values in an integer vector.
+!>
+!> @param vec
+!> Vector from which the two values will be swapped.
 !>
 !> @param x
 !> The index of the first value to be swapped.

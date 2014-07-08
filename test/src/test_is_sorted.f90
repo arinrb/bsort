@@ -1,4 +1,5 @@
 module ord
+  implicit none
 contains
   function abs_order_int(x,y) result(out)
     integer :: x

@@ -3,7 +3,7 @@
 !> @brief 
 !> Swap two #DATA_FULL# values. 
 !>
-!> @detials 
+!> @details 
 !> Swap two #DATA_FULL# values.
 !>
 !> @param x
