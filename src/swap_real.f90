@@ -14,7 +14,7 @@
 !> 
 !> @author Arin R. Bratt
 !> @date 05/07/2014
-pure subroutine swap_real(x,y)
+elemental subroutine swap_real(x,y)
   ! Arguments
   real, intent(inout) :: x
   real, intent(inout) :: y

@@ -112,6 +112,62 @@ module bsort
      module procedure swap_vec_int
      module procedure swap_vec_real
   end interface swap
+
+  !> @ingroup bsort
+  !> @defgroup quick_sort
+  interface quick_sort
+     module procedure quick_sort_vec_int
+     module procedure quick_sort_vec_real
+     module procedure quick_sort_vec_dble
+     module procedure quick_sort_vec_map_int
+     module procedure quick_sort_vec_map_real
+     module procedure quick_sort_vec_map_dble
+     module procedure quick_sort_vec_asc_int
+     module procedure quick_sort_vec_asc_real
+     module procedure quick_sort_vec_asc_dble
+     module procedure quick_sort_vec_asc_map_int
+     module procedure quick_sort_vec_asc_map_real
+     module procedure quick_sort_vec_asc_map_dble
+     module procedure quick_sort_vec_gen_int
+     module procedure quick_sort_vec_gen_real
+     module procedure quick_sort_vec_gen_dble
+     module procedure quick_sort_vec_gen_map_int
+     module procedure quick_sort_vec_gen_map_real
+     module procedure quick_sort_vec_gen_map_dble
+  end interface quick_sort
+
+  !> @ingroup bsort
+  !> @defgroup quick_sort_asc
+  interface quick_sort_asc
+     module procedure quick_sort_vec_asc_int
+     module procedure quick_sort_vec_asc_real
+     module procedure quick_sort_vec_asc_dble
+     module procedure quick_sort_vec_asc_map_int
+     module procedure quick_sort_vec_asc_map_real
+     module procedure quick_sort_vec_asc_map_dble
+  end interface quick_sort_asc
+
+  !> @ingroup bsort
+  !> @defgroup quick_sort_dec
+  interface quick_sort_dec
+     module procedure quick_sort_vec_dec_int
+     module procedure quick_sort_vec_dec_real
+     module procedure quick_sort_vec_dec_dble
+     module procedure quick_sort_vec_dec_map_int
+     module procedure quick_sort_vec_dec_map_real
+     module procedure quick_sort_vec_dec_map_dble
+  end interface quick_sort_dec
+
+  !> @ingroup bsort
+  !> @defgroup quick_sort_gen
+  interface quick_sort_gen
+     module procedure quick_sort_vec_gen_int
+     module procedure quick_sort_vec_gen_real
+     module procedure quick_sort_vec_gen_dble
+     module procedure quick_sort_vec_gen_map_int
+     module procedure quick_sort_vec_gen_map_real
+     module procedure quick_sort_vec_gen_map_dble
+  end interface quick_sort_gen
   
 contains
 
@@ -174,5 +230,37 @@ contains
   include 'swap_vec_dble.f90'
   include 'swap_vec_int.f90'
   include 'swap_vec_real.f90'
+
+  ! quick_sort_vec
+  include 'quick_sort_vec_int.f90'
+  include 'quick_sort_vec_real.f90'
+  include 'quick_sort_vec_dble.f90'
+  include 'quick_sort_vec_map_int.f90'
+  include 'quick_sort_vec_map_real.f90'
+  include 'quick_sort_vec_map_dble.f90'
+
+  ! quick_sort_vec_asc
+  include 'quick_sort_vec_asc_int.f90'
+  include 'quick_sort_vec_asc_real.f90'
+  include 'quick_sort_vec_asc_dble.f90'
+  include 'quick_sort_vec_asc_map_int.f90'
+  include 'quick_sort_vec_asc_map_real.f90'
+  include 'quick_sort_vec_asc_map_dble.f90'
+
+  ! quick_sort_vec_dec
+  include 'quick_sort_vec_dec_int.f90'
+  include 'quick_sort_vec_dec_real.f90'
+  include 'quick_sort_vec_dec_dble.f90'
+  include 'quick_sort_vec_dec_map_int.f90'
+  include 'quick_sort_vec_dec_map_real.f90'
+  include 'quick_sort_vec_dec_map_dble.f90'
+
+  ! quick_sort_vec_gen
+  include 'quick_sort_vec_gen_int.f90'
+  include 'quick_sort_vec_gen_real.f90'
+  include 'quick_sort_vec_gen_dble.f90'
+  include 'quick_sort_vec_gen_map_int.f90'
+  include 'quick_sort_vec_gen_map_real.f90'
+  include 'quick_sort_vec_gen_map_dble.f90'
 
 end module bsort

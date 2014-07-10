@@ -8,5 +8,9 @@ var group__bsort =
     [ "Is_sorted_asc", "group__is__sorted__asc.html", "group__is__sorted__asc" ],
     [ "Is_sorted_dec", "group__is__sorted__dec.html", "group__is__sorted__dec" ],
     [ "Is_sorted_gen", "group__is__sorted__gen.html", null ],
-    [ "Swap", "group__swap.html", "group__swap" ]
+    [ "Swap", "group__swap.html", "group__swap" ],
+    [ "Quick_sort", "group__quick__sort.html", "group__quick__sort" ],
+    [ "Quick_sort_asc", "group__quick__sort__asc.html", "group__quick__sort__asc" ],
+    [ "Quick_sort_dec", "group__quick__sort__dec.html", "group__quick__sort__dec" ],
+    [ "Quick_sort_gen", "group__quick__sort__gen.html", "group__quick__sort__gen" ]
 ];

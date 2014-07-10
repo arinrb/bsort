@@ -14,7 +14,7 @@
 !> 
 !> @author Arin R. Bratt
 !> @date 05/07/2014
-pure subroutine swap_int(x,y)
+elemental subroutine swap_int(x,y)
   ! Arguments
   integer, intent(inout) :: x
   integer, intent(inout) :: y

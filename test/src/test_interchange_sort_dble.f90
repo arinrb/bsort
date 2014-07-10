@@ -38,12 +38,13 @@ program test_interchange_sort_dble
   double precision :: data_asc(10 ** max_order,test_count)
   double precision :: data_dec(10 ** max_order,test_count)
   double precision :: data_rnd(10 ** max_order,test_count)
+  double precision :: data_eql(10 ** max_order,test_count)
   double precision :: sorted_data(10 ** max_order,test_count)
   character(3) :: order_types(3) = ['asc','dec','abs']
   Character(15) :: order_names(3) = ['Ascending      ','Decending      ','Absolute Value ']
-  character(20) :: vec_names(3) = ['Ascending Vector    ', 'Decending Vector    ','Random Vector       ']
+  character(20) :: vec_names(4) = ['Ascending Vector    ', 'Decending Vector    ','Random Vector       ','Identicial Vector   ']
   
-  real :: times(3)
+  real :: times(4)
   real :: start
   real :: end
 
@@ -54,10 +55,11 @@ program test_interchange_sort_dble
   integer :: idx
 
   logical :: sorted
-  character(4) :: passed(3)
+  character(4) :: passed(4)
 
   ! Build data
   call random_number(data)
+  data = (data - 0.5d0) * 100.0d0
   data_asc = dble(data)
   do i = 1,test_count
      do j = 2,size(data_asc,1) 
@@ -65,16 +67,16 @@ program test_interchange_sort_dble
      end do
   end do
   
-  call random_number(data)
   data_dec = dble(data)
   do i = 1,test_count
      do j = 2,size(data_dec,1) 
-        if (data_dec(j,i) < data_dec(j - 1,i)) data_dec(j,i) = data_dec(j - 1,i) + abs(data_dec(j,i))
+        if (data_dec(j,i) > data_dec(j - 1,i)) data_dec(j,i) = data_dec(j - 1,i) - abs(data_dec(j,i))
      end do
   end do
   
-  call random_number(data)
   data_rnd = dble(data)
+
+  data_eql = dble(0)
 
   ! Headers
   print *
@@ -83,7 +85,8 @@ program test_interchange_sort_dble
   print '(40("-"))'
   print *
 
-  print '("Sort By",T20,"Vector Length",T35,A20,T55,A20,T75,A20)',vec_names
+  print '("Sort By",T20,"Vector Length",T35,A20,T55,A20,T75,A20,T95,A20)',vec_names
+  print '(115("-"))'
   ! Main loop
   do i = 1,size(order_types,1)
      do j = 1,max_order
@@ -220,10 +223,54 @@ program test_interchange_sort_dble
         else
            passed(idx) = 'fail'
         end if
+
+        ! Identicial vector
+        idx = 4
+        sorted_data(1:n,:) = data_eql(1:n,:)
+        if (order_types(i) .eq. 'asc') then 
+           call cpu_time(start)
+           do k = 1,test_count
+              call interchange_sort(sorted_data(1:n,k))
+           end do
+           call cpu_time(end)
+           times(idx) = end - start
+           sorted = .true.
+           do k = 1,test_count
+              if (.not. is_sorted(sorted_data(1:n,k))) sorted = .false.
+           end do
+        else if(order_types(i) .eq. 'dec') then 
+           call cpu_time(start)
+           do k = 1,test_count
+              call interchange_sort(sorted_data(1:n,k),.false.)
+           end do
+           call cpu_time(end)
+           times(idx) = end - start
+           sorted = .true.
+           do k = 1,test_count
+              if (.not. is_sorted(sorted_data(1:n,k),.false.)) sorted = .false.
+           end do
+        else
+           call cpu_time(start)
+           do k = 1,test_count
+              call interchange_sort(sorted_data(1:n,k),abs_order_dble)
+           end do
+           call cpu_time(end)
+           times(idx) = end - start
+           sorted = .true.
+           do k = 1,test_count
+              if (.not. is_sorted(sorted_data(1:n,k),abs_order_dble)) sorted = .false.
+           end do
+        end if
+
+        if (sorted) then
+           passed(idx) = 'pass'
+        else
+           passed(idx) = 'fail'
+        end if
         
         times = times / real(test_count)
         ! Write line 
-        print '(A15,T20,I8,T35,A4,"(",F10.8,"sec)",T55,A4,"(",F10.8,"sec)",T75,A4,"(",F10.8,"sec)")',&
+        print '(A15,T20,I8,T35,A4,"(",F10.8,"sec)",T55,A4,"(",F10.8,"sec)",T75,A4,"(",F10.8,"sec)",T95,A4,"(",F10.8,"sec)")',&
              order_names(i),&
              n,&
              passed(1),&
@@ -231,7 +278,9 @@ program test_interchange_sort_dble
              passed(2),&
              times(2),&
              passed(3),&
-             times(3)
+             times(3),&
+             passed(4),&
+             times(4)
              
      end do
   end do

@@ -86,27 +86,27 @@ else
 endif
 	@echo "Moving mod file"
 	mv ${NAME}.mod ${INCPATH}${NAME}.mod
-test: build
+test: build test_is_sorted test_interchange_sort test_quick_sort
 	mkdir -p ${TESTPATH}${BINPATH}
-test_is_sorted: test
+test_is_sorted:
 	@echo "Build test_is_sorted"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_is_sorted${EXEEXT} ${TESTPATH}${SRC}test_is_sorted.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
 	rm -rfv ord.mod
 	${TESTPATH}${BINPATH}test_is_sorted${EXEEXT}
 
-test_interchange_sort_int: test
+test_interchange_sort_int:
 	@echo "Build test_interchange_sort_int"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT} ${TESTPATH}${SRC}test_interchange_sort_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
 	rm -rfv ord.mod
 	${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT}
 
-test_interchange_sort_real: test
+test_interchange_sort_real:
 	@echo "Build test_interchange_sort_real"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT} ${TESTPATH}${SRC}test_interchange_sort_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
 	rm -rfv ord.mod
 	${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT}
 
-test_interchange_sort_dble: test
+test_interchange_sort_dble:
 	@echo "Build test_interchange_sort_dble"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_dble${EXEEXT} ${TESTPATH}${SRC}test_interchange_sort_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
 	rm -rfv ord.mod
@@ -114,16 +114,36 @@ test_interchange_sort_dble: test
 
 test_interchange_sort: test_interchange_sort_int test_interchange_sort_real test_interchange_sort_dble 
 
+test_quick_sort_int:
+	@echo "Build test_quick_sort_int"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_int${EXEEXT} ${TESTPATH}${SRC}test_quick_sort_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_quick_sort_int${EXEEXT}
+
+test_quick_sort_real:
+	@echo "Build test_quick_sort_real"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_real${EXEEXT} ${TESTPATH}${SRC}test_quick_sort_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_quick_sort_real${EXEEXT}
+
+test_quick_sort_dble:
+	@echo "Build test_quick_sort_dble"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_dble${EXEEXT} ${TESTPATH}${SRC}test_quick_sort_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_quick_sort_dble${EXEEXT}
+
+test_quick_sort: test_quick_sort_int test_quick_sort_real test_quick_sort_dble 
+
 clean:
-	rm -rfv /*#
-	rm -rfv /*~
+	rm -rfv *#
+	rm -rfv *~
 	rm -rfv *${OBJPATH}*
 	rm -rfv *${BINPATH}*
 	rm -fv ${LIBPATH}${LIBPREFIX}${NAME}${LIBEXT}
 	rm -fv ${INCPATH}${NAME}${MODEXT}
 	rm -rfv *${EXEEXT}
 	rm -rfv *.mod
-	rm -rfv ${TEMPPATH}${TESTPATH}*~
+	rm -rfv ${TEMPPATH}${TESTPATH}${SRC}*~
 	rm -rfv ${TEMPPATH}${SRC}*~
 	rm -rfv ${TESTPATH}*~
 	rm -rfv ${SRC}*~
