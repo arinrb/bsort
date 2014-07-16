@@ -13,20 +13,20 @@
 !> The second value to be swapped.
 !> 
 !> @author Arin R. Bratt
-!> @date 05/07/2014
+!> @date 11/07/2014
 elemental subroutine swap_dble(x,y)
   ! Arguments
   double precision, intent(inout) :: x
   double precision, intent(inout) :: y
   
   ! Variables
-  double precision :: temp
+   double precision :: temp
 
   ! Main
   temp = x
   x = y
   y = temp
-
+  
 end subroutine swap_dble
 
 

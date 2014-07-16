@@ -13,20 +13,20 @@
 !> The second value to be swapped.
 !> 
 !> @author Arin R. Bratt
-!> @date 05/07/2014
+!> @date 11/07/2014
 elemental subroutine swap_real(x,y)
   ! Arguments
   real, intent(inout) :: x
   real, intent(inout) :: y
   
   ! Variables
-  real :: temp
+   real :: temp
 
   ! Main
   temp = x
   x = y
   y = temp
-
+  
 end subroutine swap_real
 
 

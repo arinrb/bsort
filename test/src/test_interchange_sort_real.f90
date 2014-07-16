@@ -1,19 +1,3 @@
-module ord
-  implicit none
-contains
-  function abs_order_real(x,y) result(out)
-    real :: x
-    real :: y
-    logical :: out
-    if (abs(x) > abs(y)) then
-       out = .true.
-    else
-       out = .false.
-    end if
-  end function abs_order_real
-end module ord
-
-
 !> @ingroup test
 !> @brief
 !> Test the interchange_sort interface.
@@ -22,15 +6,15 @@ end module ord
 !> Test the interchange_sort interface for real values.
 !> 
 !> @author Arin R. Bratt
-!> @date 07/07/2014
+!> @date 15/07/2014
 program test_interchange_sort_real
   use bsort
-  use ord
+  use orders
 
   implicit none 
 
   ! Parameters
-  integer, parameter :: max_order = 3 ! Maximum order of magnitude of elements in vectors to be checked.
+  integer, parameter :: max_order = 4 ! Maximum order of magnitude of elements in vectors to be checked.
   integer, parameter :: test_count = 1000 ! Number of tests to be run.
   
   ! Variables
@@ -40,8 +24,8 @@ program test_interchange_sort_real
   real :: data_rnd(10 ** max_order,test_count)
   real :: data_eql(10 ** max_order,test_count)
   real :: sorted_data(10 ** max_order,test_count)
-  character(3) :: order_types(3) = ['asc','dec','abs']
-  Character(15) :: order_names(3) = ['Ascending      ','Decending      ','Absolute Value ']
+  character(3) :: order_types(3) = ['asc','dec','gt ']
+  Character(15) :: order_names(3) = ['Ascending      ','Decending      ','Greater Than   ']
   character(20) :: vec_names(4) = ['Ascending Vector    ', 'Decending Vector    ','Random Vector       ','Identicial Vector   ']
   
   real :: times(4)
@@ -120,13 +104,13 @@ program test_interchange_sort_real
         else
            call cpu_time(start)
            do k = 1,test_count
-              call interchange_sort(sorted_data(1:n,k),abs_order_real)
+              call interchange_sort(sorted_data(1:n,k),gt_real)
            end do
            call cpu_time(end)
            times(idx) = end - start
            sorted = .true.
            do k = 1,test_count
-              if (.not. is_sorted(sorted_data(1:n,k),abs_order_real)) sorted = .false.
+              if (.not. is_sorted(sorted_data(1:n,k),gt_real)) sorted = .false.
            end do
         end if
 
@@ -164,13 +148,13 @@ program test_interchange_sort_real
         else
            call cpu_time(start)
            do k = 1,test_count
-              call interchange_sort(sorted_data(1:n,k),abs_order_real)
+              call interchange_sort(sorted_data(1:n,k),gt_real)
            end do
            call cpu_time(end)
            times(idx) = end - start
            sorted = .true.
            do k = 1,test_count
-              if (.not. is_sorted(sorted_data(1:n,k),abs_order_real)) sorted = .false.
+              if (.not. is_sorted(sorted_data(1:n,k),gt_real)) sorted = .false.
            end do
         end if
 
@@ -208,13 +192,13 @@ program test_interchange_sort_real
         else
            call cpu_time(start)
            do k = 1,test_count
-              call interchange_sort(sorted_data(1:n,k),abs_order_real)
+              call interchange_sort(sorted_data(1:n,k),gt_real)
            end do
            call cpu_time(end)
            times(idx) = end - start
            sorted = .true.
            do k = 1,test_count
-              if (.not. is_sorted(sorted_data(1:n,k),abs_order_real)) sorted = .false.
+              if (.not. is_sorted(sorted_data(1:n,k),gt_real)) sorted = .false.
            end do
         end if
 
@@ -252,13 +236,13 @@ program test_interchange_sort_real
         else
            call cpu_time(start)
            do k = 1,test_count
-              call interchange_sort(sorted_data(1:n,k),abs_order_real)
+              call interchange_sort(sorted_data(1:n,k),gt_real)
            end do
            call cpu_time(end)
            times(idx) = end - start
            sorted = .true.
            do k = 1,test_count
-              if (.not. is_sorted(sorted_data(1:n,k),abs_order_real)) sorted = .false.
+              if (.not. is_sorted(sorted_data(1:n,k),gt_real)) sorted = .false.
            end do
         end if
 
