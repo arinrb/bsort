@@ -104,17 +104,17 @@ my %types = (
 	    quick_sort_recursive => {
 		name => 'quick_sort_recursive',
 		docRef => 'a recursive three way quick sort',
-		maxTestOrder => 5,
+		maxTestOrder => 4,
 	    },
 	    quick_sort_flat => {
 		name => 'quick_sort_flat',
 		docRef => 'a flat three way quick sort',
-		maxTestOrder => 5,
+		maxTestOrder => 4,
 	    },
 	    interchange_sort => {
 		name => 'interchange_sort',
 		docRef => 'an interchange sort',
-		maxTestOrder => 4,
+		maxTestOrder => 3,
 	    }
 	},
 	none => 0

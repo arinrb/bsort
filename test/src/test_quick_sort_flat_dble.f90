@@ -14,8 +14,8 @@ program test_quick_sort_flat_dble
   implicit none 
 
   ! Parameters
-  integer, parameter :: max_order = 5 ! Maximum order of magnitude of elements in vectors to be checked.
-  integer, parameter :: test_count = 1000 ! Number of tests to be run.
+  integer, parameter :: max_order = 4 ! Maximum order of magnitude of elements in vectors to be checked.
+  integer, parameter :: test_count = 10 ! Number of tests to be run.
   
   ! Variables
   double precision :: data(10 ** max_order,test_count)
@@ -64,7 +64,7 @@ program test_quick_sort_flat_dble
 
   ! Headers
   print *
-  print *,"Test interchange_sort with double precision values."
+  print *,"Test a flat three way quick sort with double precision values."
   print *,test_count," different vectors."
   print '(40("-"))'
   print *

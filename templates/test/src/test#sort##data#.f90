@@ -15,7 +15,7 @@ program test#sort##data#
 
   ! Parameters
   integer, parameter :: max_order = #<sort><maxTestOrder># ! Maximum order of magnitude of elements in vectors to be checked.
-  integer, parameter :: test_count = 1000 ! Number of tests to be run.
+  integer, parameter :: test_count = 10 ! Number of tests to be run.
   
   ! Variables
   double precision :: data(10 ** max_order,test_count)
@@ -64,7 +64,7 @@ program test#sort##data#
 
   ! Headers
   print *
-  print *,"Test interchange_sort with #<data><full># values."
+  print *,"Test #<sort><docRef># with #<data><full># values."
   print *,test_count," different vectors."
   print '(40("-"))'
   print *

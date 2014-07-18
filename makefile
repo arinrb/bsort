@@ -99,14 +99,8 @@ orders:
 	@echo "Moving mod file"
 	mv orders.mod ${INCPATH}orders.mod
 
-test: build test_is_sorted test_interchange_sort test_quick_sort
+test: build test_interchange_sort test_quick_sort_flat test_quick_sort_recursive
 	mkdir -p ${TESTPATH}${BINPATH}
-test_is_sorted:
-	@echo "Build test_is_sorted"
-	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_is_sorted${EXEEXT} ${TESTPATH}${SRC}test_is_sorted.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
-	${TESTPATH}${BINPATH}test_is_sorted${EXEEXT}
-
 test_interchange_sort_int:
 	@echo "Build test_interchange_sort_int"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_interchange_sort_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
@@ -146,6 +140,26 @@ test_quick_sort_flat_dble:
 	${TESTPATH}${BINPATH}test_quick_sort_flat_dble${EXEEXT}
 
 test_quick_sort_flat: test_quick_sort_flat_int test_quick_sort_flat_real test_quick_sort_flat_dble 
+
+test_quick_sort_recursive_int:
+	@echo "Build test_quick_sort_recursive_int"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_quick_sort_recursive_int${EXEEXT}
+
+test_quick_sort_recursive_real:
+	@echo "Build test_quick_sort_recursive_real"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_quick_sort_recursive_real${EXEEXT}
+
+test_quick_sort_recursive_dble:
+	@echo "Build test_quick_sort_recursive_dble"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_dble${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	rm -rfv ord.mod
+	${TESTPATH}${BINPATH}test_quick_sort_recursive_dble${EXEEXT}
+
+test_quick_sort_recursive: test_quick_sort_recursive_int test_quick_sort_recursive_real test_quick_sort_recursive_dble 
 
 clean:
 	rm -rfv *~
