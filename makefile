@@ -71,7 +71,7 @@ doc:
 	doxygen Doxyfile
 preprocess:
 	perl preprocessor.pl
-build:	preprocess orders
+build:	
 	mkdir -p ${OBJPATH}
 	mkdir -p $(INCPATH)
 	mkdir -p $(LIBPATH)
@@ -99,68 +99,60 @@ orders:
 	@echo "Moving mod file"
 	mv orders.mod ${INCPATH}orders.mod
 
-test: build test_interchange_sort test_quick_sort_flat test_quick_sort_recursive
+test: build orders test_interchange_sort test_insertion_sort test_quick_sort_flat test_quick_sort_recursive
 	mkdir -p ${TESTPATH}${BINPATH}
-test_interchange_sort_int:
-	@echo "Build test_interchange_sort_int"
-	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_interchange_sort_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
-	${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT}
-
-test_interchange_sort_real:
-	@echo "Build test_interchange_sort_real"
-	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_interchange_sort_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
-	${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT}
-
+test_interchange_sort: test_interchange_sort_dble test_interchange_sort_int test_interchange_sort_real
 test_interchange_sort_dble:
 	@echo "Build test_interchange_sort_dble"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_dble${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_interchange_sort_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
 	${TESTPATH}${BINPATH}test_interchange_sort_dble${EXEEXT}
-
-test_interchange_sort: test_interchange_sort_int test_interchange_sort_real test_interchange_sort_dble 
-
-test_quick_sort_flat_int:
-	@echo "Build test_quick_sort_flat_int"
-	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_flat_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_flat_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
-	${TESTPATH}${BINPATH}test_quick_sort_flat_int${EXEEXT}
-
-test_quick_sort_flat_real:
-	@echo "Build test_quick_sort_flat_real"
-	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_flat_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_flat_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
-	${TESTPATH}${BINPATH}test_quick_sort_flat_real${EXEEXT}
-
+test_interchange_sort_int:
+	@echo "Build test_interchange_sort_int"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_interchange_sort_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_interchange_sort_int${EXEEXT}
+test_interchange_sort_real:
+	@echo "Build test_interchange_sort_real"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_interchange_sort_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_interchange_sort_real${EXEEXT}
+test_insertion_sort: test_insertion_sort_dble test_insertion_sort_int test_insertion_sort_real
+test_insertion_sort_dble:
+	@echo "Build test_insertion_sort_dble"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_insertion_sort_dble${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_insertion_sort_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_insertion_sort_dble${EXEEXT}
+test_insertion_sort_int:
+	@echo "Build test_insertion_sort_int"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_insertion_sort_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_insertion_sort_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_insertion_sort_int${EXEEXT}
+test_insertion_sort_real:
+	@echo "Build test_insertion_sort_real"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_insertion_sort_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_insertion_sort_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_insertion_sort_real${EXEEXT}
+test_quick_sort_flat: test_quick_sort_flat_dble test_quick_sort_flat_int test_quick_sort_flat_real
 test_quick_sort_flat_dble:
 	@echo "Build test_quick_sort_flat_dble"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_flat_dble${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_flat_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
 	${TESTPATH}${BINPATH}test_quick_sort_flat_dble${EXEEXT}
-
-test_quick_sort_flat: test_quick_sort_flat_int test_quick_sort_flat_real test_quick_sort_flat_dble 
-
-test_quick_sort_recursive_int:
-	@echo "Build test_quick_sort_recursive_int"
-	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
-	${TESTPATH}${BINPATH}test_quick_sort_recursive_int${EXEEXT}
-
-test_quick_sort_recursive_real:
-	@echo "Build test_quick_sort_recursive_real"
-	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
-	${TESTPATH}${BINPATH}test_quick_sort_recursive_real${EXEEXT}
-
+test_quick_sort_flat_int:
+	@echo "Build test_quick_sort_flat_int"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_flat_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_flat_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_quick_sort_flat_int${EXEEXT}
+test_quick_sort_flat_real:
+	@echo "Build test_quick_sort_flat_real"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_flat_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_flat_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_quick_sort_flat_real${EXEEXT}
+test_quick_sort_recursive: test_quick_sort_recursive_dble test_quick_sort_recursive_int test_quick_sort_recursive_real
 test_quick_sort_recursive_dble:
 	@echo "Build test_quick_sort_recursive_dble"
 	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_dble${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_dble.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
-	rm -rfv ord.mod
 	${TESTPATH}${BINPATH}test_quick_sort_recursive_dble${EXEEXT}
-
-test_quick_sort_recursive: test_quick_sort_recursive_int test_quick_sort_recursive_real test_quick_sort_recursive_dble 
-
+test_quick_sort_recursive_int:
+	@echo "Build test_quick_sort_recursive_int"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_int${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_int.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_quick_sort_recursive_int${EXEEXT}
+test_quick_sort_recursive_real:
+	@echo "Build test_quick_sort_recursive_real"
+	${FC} ${FCFLAGS} -o ${TESTPATH}${BINPATH}test_quick_sort_recursive_real${EXEEXT} ${OBJPATH}orders.o ${TESTPATH}${SRC}test_quick_sort_recursive_real.f90 -I${INCPATH} -L${LIBPATH} -l${NAME}
+	${TESTPATH}${BINPATH}test_quick_sort_recursive_real${EXEEXT}
 clean:
 	rm -rfv *~
 	rm -rfv *${OBJPATH}*

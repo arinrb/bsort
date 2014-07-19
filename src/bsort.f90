@@ -31,6 +31,29 @@ module bsort
   end interface interchange_sort
 
   !> @ingroup bsort
+  !> @defgroup insertion_sort
+  interface insertion_sort
+     module procedure insertion_sort_dble
+     module procedure insertion_sort_asc_dble
+     module procedure insertion_sort_gen_dble
+     module procedure insertion_sort_int
+     module procedure insertion_sort_asc_int
+     module procedure insertion_sort_gen_int
+     module procedure insertion_sort_real
+     module procedure insertion_sort_asc_real
+     module procedure insertion_sort_gen_real
+     module procedure insertion_sort_map_dble
+     module procedure insertion_sort_asc_map_dble
+     module procedure insertion_sort_gen_map_dble
+     module procedure insertion_sort_map_int
+     module procedure insertion_sort_asc_map_int
+     module procedure insertion_sort_gen_map_int
+     module procedure insertion_sort_map_real
+     module procedure insertion_sort_asc_map_real
+     module procedure insertion_sort_gen_map_real
+  end interface insertion_sort
+
+  !> @ingroup bsort
   !> @defgroup quick_sort_flat
   interface quick_sort_flat
      module procedure quick_sort_flat_dble
@@ -108,6 +131,39 @@ module bsort
      module procedure interchange_sort_gen_map_int
      module procedure interchange_sort_gen_map_real
   end interface interchange_sort_gen
+
+  !> @ingroup bsort
+  !> @defgroup insertion_sort_asc
+  interface insertion_sort_asc
+     module procedure insertion_sort_asc_dble
+     module procedure insertion_sort_asc_int
+     module procedure insertion_sort_asc_real
+     module procedure insertion_sort_asc_map_dble
+     module procedure insertion_sort_asc_map_int
+     module procedure insertion_sort_asc_map_real
+  end interface insertion_sort_asc
+
+  !> @ingroup bsort
+  !> @defgroup insertion_sort_dec
+  interface insertion_sort_dec
+     module procedure insertion_sort_dec_dble
+     module procedure insertion_sort_dec_int
+     module procedure insertion_sort_dec_real
+     module procedure insertion_sort_dec_map_dble
+     module procedure insertion_sort_dec_map_int
+     module procedure insertion_sort_dec_map_real
+  end interface insertion_sort_dec
+
+  !> @ingroup bsort
+  !> @defgroup insertion_sort_gen
+  interface insertion_sort_gen
+     module procedure insertion_sort_gen_dble
+     module procedure insertion_sort_gen_int
+     module procedure insertion_sort_gen_real
+     module procedure insertion_sort_gen_map_dble
+     module procedure insertion_sort_gen_map_int
+     module procedure insertion_sort_gen_map_real
+  end interface insertion_sort_gen
 
   !> @ingroup bsort
   !> @defgroup quick_sort_flat_asc
@@ -254,6 +310,38 @@ contains
   include 'interchange_sort_gen_map_dble.f90'
   include 'interchange_sort_gen_map_int.f90'
   include 'interchange_sort_gen_map_real.f90'
+
+  ! insertion_sort
+  include 'insertion_sort_dble.f90'
+  include 'insertion_sort_int.f90'
+  include 'insertion_sort_real.f90'
+  include 'insertion_sort_map_dble.f90'
+  include 'insertion_sort_map_int.f90'
+  include 'insertion_sort_map_real.f90'
+
+  ! insertion_sort_asc
+  include 'insertion_sort_asc_dble.f90'
+  include 'insertion_sort_asc_int.f90'
+  include 'insertion_sort_asc_real.f90'
+  include 'insertion_sort_asc_map_dble.f90'
+  include 'insertion_sort_asc_map_int.f90'
+  include 'insertion_sort_asc_map_real.f90'
+
+  ! insertion_sort_dec
+  include 'insertion_sort_dec_dble.f90'
+  include 'insertion_sort_dec_int.f90'
+  include 'insertion_sort_dec_real.f90'
+  include 'insertion_sort_dec_map_dble.f90'
+  include 'insertion_sort_dec_map_int.f90'
+  include 'insertion_sort_dec_map_real.f90'
+
+  ! insertion_sort_gen
+  include 'insertion_sort_gen_dble.f90'
+  include 'insertion_sort_gen_int.f90'
+  include 'insertion_sort_gen_real.f90'
+  include 'insertion_sort_gen_map_dble.f90'
+  include 'insertion_sort_gen_map_int.f90'
+  include 'insertion_sort_gen_map_real.f90'
 
   ! quick_sort_flat
   include 'quick_sort_flat_dble.f90'

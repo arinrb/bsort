@@ -42,6 +42,42 @@ module bsort
      module procedure #<sort><name>#_asc#map##data#
      module procedure #<sort><name>#_gen#map##data#
   end interface #<sort><name>#
+#SET<sort><insertion_sort>#
+
+  !> @ingroup bsort
+  !> @defgroup #<sort><name>#
+  interface #<sort><name>#
+#SET<map><0>#
+#SET<data><dble>#
+     module procedure #<sort><name>##map##data#
+     module procedure #<sort><name>#_asc#map##data#
+     module procedure #<sort><name>#_gen#map##data#
+#SET<map><0>#
+#SET<data><int>#
+     module procedure #<sort><name>##map##data#
+     module procedure #<sort><name>#_asc#map##data#
+     module procedure #<sort><name>#_gen#map##data#
+#SET<map><0>#
+#SET<data><real>#
+     module procedure #<sort><name>##map##data#
+     module procedure #<sort><name>#_asc#map##data#
+     module procedure #<sort><name>#_gen#map##data#
+#SET<map><true>#
+#SET<data><dble>#
+     module procedure #<sort><name>##map##data#
+     module procedure #<sort><name>#_asc#map##data#
+     module procedure #<sort><name>#_gen#map##data#
+#SET<map><true>#
+#SET<data><int>#
+     module procedure #<sort><name>##map##data#
+     module procedure #<sort><name>#_asc#map##data#
+     module procedure #<sort><name>#_gen#map##data#
+#SET<map><true>#
+#SET<data><real>#
+     module procedure #<sort><name>##map##data#
+     module procedure #<sort><name>#_asc#map##data#
+     module procedure #<sort><name>#_gen#map##data#
+  end interface #<sort><name>#
 #SET<sort><quick_sort_flat>#
 
   !> @ingroup bsort
@@ -115,6 +151,79 @@ module bsort
      module procedure #<sort><name>#_gen#map##data#
   end interface #<sort><name>#
 #SET<sort><interchange_sort>#
+#SET<ord><asc>#
+
+  !> @ingroup bsort
+  !> @defgroup #<sort><name>##ord#
+  interface #<sort><name>##ord#
+#SET<map><0>#
+#SET<data><dble>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><0>#
+#SET<data><int>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><0>#
+#SET<data><real>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><dble>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><int>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><real>#
+     module procedure #<sort><name>##ord##map##data#
+  end interface #<sort><name>##ord#
+#SET<ord><dec>#
+
+  !> @ingroup bsort
+  !> @defgroup #<sort><name>##ord#
+  interface #<sort><name>##ord#
+#SET<map><0>#
+#SET<data><dble>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><0>#
+#SET<data><int>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><0>#
+#SET<data><real>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><dble>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><int>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><real>#
+     module procedure #<sort><name>##ord##map##data#
+  end interface #<sort><name>##ord#
+#SET<ord><gen>#
+
+  !> @ingroup bsort
+  !> @defgroup #<sort><name>##ord#
+  interface #<sort><name>##ord#
+#SET<map><0>#
+#SET<data><dble>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><0>#
+#SET<data><int>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><0>#
+#SET<data><real>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><dble>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><int>#
+     module procedure #<sort><name>##ord##map##data#
+#SET<map><true>#
+#SET<data><real>#
+     module procedure #<sort><name>##ord##map##data#
+  end interface #<sort><name>##ord#
+#SET<sort><insertion_sort>#
 #SET<ord><asc>#
 
   !> @ingroup bsort
@@ -400,6 +509,90 @@ module bsort
   
 contains
 #SET<sort><interchange_sort>#
+
+  ! #<sort><name>#
+#SET<map><0>#
+#SET<data><dble>#
+  include '#<sort><name>##map##data#.f90'
+#SET<map><0>#
+#SET<data><int>#
+  include '#<sort><name>##map##data#.f90'
+#SET<map><0>#
+#SET<data><real>#
+  include '#<sort><name>##map##data#.f90'
+#SET<map><true>#
+#SET<data><dble>#
+  include '#<sort><name>##map##data#.f90'
+#SET<map><true>#
+#SET<data><int>#
+  include '#<sort><name>##map##data#.f90'
+#SET<map><true>#
+#SET<data><real>#
+  include '#<sort><name>##map##data#.f90'
+#SET<ord><asc>#
+
+  ! #<sort><name>##ord#
+#SET<map><0>#
+#SET<data><dble>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><0>#
+#SET<data><int>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><0>#
+#SET<data><real>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><dble>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><int>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><real>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<ord><dec>#
+
+  ! #<sort><name>##ord#
+#SET<map><0>#
+#SET<data><dble>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><0>#
+#SET<data><int>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><0>#
+#SET<data><real>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><dble>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><int>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><real>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<ord><gen>#
+
+  ! #<sort><name>##ord#
+#SET<map><0>#
+#SET<data><dble>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><0>#
+#SET<data><int>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><0>#
+#SET<data><real>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><dble>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><int>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<map><true>#
+#SET<data><real>#
+  include '#<sort><name>##ord##map##data#.f90'
+#SET<sort><insertion_sort>#
 
   ! #<sort><name>#
 #SET<map><0>#

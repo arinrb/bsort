@@ -69,6 +69,8 @@ my %types = (
 		blas => 0,
 		blasPrefix => 'ERROR',
 		var => 'vec',
+		scalar => 'integer_value',
+		swap => 'swap_value',
 	    },
 	    real => {
 		 name => 'real',
@@ -77,6 +79,8 @@ my %types = (
 		 blas => 1,
 		 blasPrefix => 's',
 		 var => 'vec',
+		 scalar => 'real_value',
+		 swap => 'swap_value',
 	    },
 	     dble => {
 		 name => 'dble',
@@ -85,6 +89,8 @@ my %types = (
 		 blas => 1,
 		 blasPrefix => 'd',
 		 var => 'vec',
+		 scalar => 'double_precision_value',
+		 swap => 'swap_value',
 	     }
 	},
 	none => 0
@@ -114,6 +120,11 @@ my %types = (
 	    interchange_sort => {
 		name => 'interchange_sort',
 		docRef => 'an interchange sort',
+		maxTestOrder => 3,
+	    },
+	    insertion_sort => {
+		name => 'insertion_sort',
+		docRef => 'an insertion sort',
 		maxTestOrder => 3,
 	    }
 	},
@@ -184,7 +195,19 @@ sub processMasterTemplate{
     while (<FILE>){$text .= $_};
     close FILE;
 
-    # Process loop
+    # Process list
+    while ($text =~ /#LIST\[(.*?)\]\[(.*?)\]\[(.*?)\]\[(.*?)\]ENDLIST#/) {
+	my $pre = $1;
+	my $post = $3;
+	my $sep = $4;
+	my @values = getValues($2);;
+	for my $idx (0...$#values){
+	    $values[$idx] = $pre.$values[$idx].$post;
+	}
+	my $new = join $sep,@values;
+	$text =~ s/#LIST\[.*?\]\[.*?\]\[.*?\]\[.*?\]ENDLIST#/${new}/;
+    }
+
     while ($text =~ /#FOR<(.*)>#(.*?)#ENDFOR<\1>#/ms){
 	my $args = $1;
 	my $loop = $2;
@@ -385,6 +408,28 @@ sub processTemplate {
 		    s/#COPY<(.*?)><(.*?)><.*?>#/$2 = $1/g;
 		}
 	    }
+	    
+	    # Size
+	    if (/#SIZE#/){
+		die "Error at $_\nData must be defined to use size.\n" if ($values{data} eq '0');
+		my $var = getFieldValue('data',$values{data},'var');
+		s/#SIZE#/size(${var},1)/g;
+	    }
+
+	    # Swap
+	    while (/(.*?)#SWAP<(.*?)><(.*?)>#(.*)/) {
+		my $begin = $1;
+		my $end = $4;
+		my $val1 = $2;
+		my $val2 = $3;
+		die "Error at $_\nData must be defined to use swap.\n" if ($values{data} eq '0');
+		my $swap = getFieldValue('data',$values{data},'swap');
+		my $front = $begin;
+		$front =~ s/./ /g;
+		my $newLine = "${begin}${swap} = ${val1}\n${front}${val1} = ${val2}\n${front}${val2} = ${swap}${end}";
+		s/.*?#SWAP<.*?><.*?>#.*/$newLine/;
+	    }
+	    
 	    # Add line of text
 	    $text .= $_."\n" unless ($skip == 1);
 	}
