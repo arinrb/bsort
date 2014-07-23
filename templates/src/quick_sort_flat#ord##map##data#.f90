@@ -59,11 +59,12 @@
   integer :: lower(stack_levels)
   integer :: upper(stack_levels)
   #<data><full># :: pivot
+  #<data><full># :: #<data><swap>#
   
   ! Initilize the stack
   idx = 1
   lower(idx) = 1
-  upper(idx) = size(#<data><var>#,1) + 1
+  upper(idx) = #SIZE# + 1
   
   ! Main loop
   do while(idx >= 1)     
@@ -101,7 +102,7 @@
                  
                  if (high > low) then
                     !If #<data><var>#(low) must follow #<data><var>#(high) than swap their values.
-                    call swap(#<data><var>#(low),#<data><var>#(high))
+                    #SWAP<#<data><var>#(low)><#<data><var>#(high)>#
                     low = low + 1
                     high = high - 1
                  else

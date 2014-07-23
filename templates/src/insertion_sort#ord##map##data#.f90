@@ -47,7 +47,7 @@
   
   do i = #SIZE# - 1,2,-1
      if (#ORD<#<data><scalar>#><#<data><var>#(i)>#) then
-        #SWAP<#<data><scalar>#><#<data><var>#(i)>#
+        #SWAP<#data#><#<data><scalar>#><#<data><var>#(i)>#
      end if
   end do
 

@@ -30,16 +30,19 @@
   #IF<map><true>#integer, intent(inout) :: #<map><var>#(:)
   #IF<ord><gen>#procedure(logical) :: #<ord><var>#
   
+  
   ! Variables
   integer :: i
   integer :: j
-  
+  #<data><full># :: #<data><swap>#
+  #IF<map><true>#integer :: #FIELD<data><int><swap>#
+
   ! The interchange sort
-  do i = 1,size(#<data><var>#,1) - 1
-     do j = i + 1,size(#<data><var>#,1)
+  do i = 1,#SIZE# - 1
+     do j = i + 1,#SIZE#
         if (#ORD<#<data><var>#(i)><#<data><var>#(j)>#) then
-            call swap(#<data><var>#(i),#<data><var>#(j))
-            #IF<map><true>#call swap(#<map><var>#(i),#<map><var>#(j))
+           #SWAP<#data#><#<data><var>#(i)><#<data><var>#(j)>#
+            #IF<map><true>##SWAP<int><#<map><var>#(i)><#<map><var>#(j)>#
         end if
      end do
   end do

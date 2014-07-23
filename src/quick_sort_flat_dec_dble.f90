@@ -44,6 +44,7 @@ pure subroutine quick_sort_flat_dec_dble(vec)
   integer :: lower(stack_levels)
   integer :: upper(stack_levels)
   double precision :: pivot
+  double precision :: swap_value
   
   ! Initilize the stack
   idx = 1
@@ -86,7 +87,9 @@ pure subroutine quick_sort_flat_dec_dble(vec)
                  
                  if (high > low) then
                     !If vec(low) must follow vec(high) than swap their values.
-                    call swap(vec(low),vec(high))
+                    swap_value = vec(low)
+                    vec(low) = vec(high)
+                    vec(high) = swap_value
                     low = low + 1
                     high = high - 1
                  else

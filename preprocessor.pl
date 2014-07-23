@@ -417,17 +417,22 @@ sub processTemplate {
 	    }
 
 	    # Swap
-	    while (/(.*?)#SWAP<(.*?)><(.*?)>#(.*)/) {
+	    while (/(.*?)#SWAP<(.*?)><(.*?)><(.*?)>#(.*)/) {
 		my $begin = $1;
-		my $end = $4;
-		my $val1 = $2;
-		my $val2 = $3;
+		my $end = $5;
+		my $val1 = $3;
+		my $val2 = $4;
+		my $field = $2;
 		die "Error at $_\nData must be defined to use swap.\n" if ($values{data} eq '0');
-		my $swap = getFieldValue('data',$values{data},'swap');
-		my $front = $begin;
-		$front =~ s/./ /g;
-		my $newLine = "${begin}${swap} = ${val1}\n${front}${val1} = ${val2}\n${front}${val2} = ${swap}${end}";
+		my $swap = getFieldValue('data',$values{$field},'swap');
+		my $dataFull = getFieldValue('data',$values{$field},'full');
+		my $newLine = "${begin}! Swap $dataFull values ${val1} and ${val2}.\n${begin}${swap} = ${val1}\n${begin}${val1} = ${val2}\n${begin}${val2} = ${swap}${end}";
 		s/.*?#SWAP<.*?><.*?>#.*/$newLine/;
+	    }
+	    
+	    # Field value
+	    while (/#FIELD<(.*?)><(.*?)><(.*?)>#/){
+		my $value = getFieldValue($1,$2,$3);
 	    }
 	    
 	    # Add line of text
