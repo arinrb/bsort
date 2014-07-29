@@ -1,4 +1,4 @@
 bsort
 =====
 
-Fortran library of vector and matrix sorting and arrangement tools. The goal of the bsort project is to create a library for sorting vectors which is faster than c sort. The current status of the project is early.
+Fortran library of vector sorting and arrangement tools. The goal of the bsort project is to create a tuned library for sorting vectors. The short term goal is to exceed the efficiency of c sort. The project is still in early development and should not yet be used. The general structure of the code and interface has not been finalized.
