@@ -41,7 +41,7 @@
   do i = 1,#SIZE# - 1
      do j = i + 1,#SIZE#
         if (#ORD<#<data><var>#(i)><#<data><var>#(j)>#) then
-           #SWAP<#data#><#<data><var>#(i)><#<data><var>#(j)>#
+           #SWAP<#<data><name>#><#<data><var>#(i)><#<data><var>#(j)>#
             #IF<map><true>##SWAP<int><#<map><var>#(i)><#<map><var>#(j)>#
         end if
      end do

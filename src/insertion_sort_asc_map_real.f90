@@ -39,6 +39,7 @@ pure subroutine insertion_sort_asc_map_real(vec,map)
   
   do i = size(vec,1) - 1,2,-1
      if (real_value > vec(i)) then
+        ! Swap real values real_value and vec(i).
         swap_value = real_value
         real_value = vec(i)
         vec(i) = swap_value

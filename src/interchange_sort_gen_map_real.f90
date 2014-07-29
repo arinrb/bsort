@@ -29,18 +29,22 @@ subroutine interchange_sort_gen_map_real(vec,map,ord)
   integer, intent(inout) :: map(:)
   procedure(logical) :: ord
   
+  
   ! Variables
   integer :: i
   integer :: j
   real :: swap_value
-  
+  integer :: swap_value
+
   ! The interchange sort
   do i = 1,size(vec,1) - 1
      do j = i + 1,size(vec,1)
         if (ord(vec(i),vec(j))) then
+           ! Swap real values vec(i) and vec(j).
            swap_value = vec(i)
            vec(i) = vec(j)
            vec(j) = swap_value
+            ! Swap integer values map(i) and map(j).
             swap_value = map(i)
             map(i) = map(j)
             map(j) = swap_value

@@ -39,6 +39,7 @@ subroutine insertion_sort_gen_real(vec,ord)
   
   do i = size(vec,1) - 1,2,-1
      if (ord(real_value,vec(i))) then
+        ! Swap real values real_value and vec(i).
         swap_value = real_value
         real_value = vec(i)
         vec(i) = swap_value

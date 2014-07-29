@@ -143,6 +143,7 @@ sub getFieldValue {
     my $value = shift;
     my $field = shift;
     
+    die "Three values must be passed to getFieldValue.\n" unless (defined($type) && defined($value) && defined($field));
     die "Type $type does not exist\n"  unless (grep {$_ eq $type} keys %types);
     die "Type $value does not exist in type $type\n"  unless (grep {$_ eq $value} keys %{$types{$type}{values}});
     die "Type $field does not exist in type $type value $value\n"  unless (grep {$_ eq $field} keys %{$types{$type}{values}{$value}});
@@ -331,7 +332,7 @@ sub processTemplate {
 		    $field_value = 'ERROR';
 		}
 		else {
-		    $field_value = getFieldValue('data',$values{data},'name');		   
+		    $field_value = getFieldValue('data',$values{data},'name');		
 		}
 		s/#CON<(.*?)>#/${field_value}($1)/;
 	    }
@@ -422,10 +423,9 @@ sub processTemplate {
 		my $end = $5;
 		my $val1 = $3;
 		my $val2 = $4;
-		my $field = $2;
-		die "Error at $_\nData must be defined to use swap.\n" if ($values{data} eq '0');
-		my $swap = getFieldValue('data',$values{$field},'swap');
-		my $dataFull = getFieldValue('data',$values{$field},'full');
+		my $data = $2;
+		my $swap = getFieldValue('data',$data,'swap');
+		my $dataFull = getFieldValue('data',$data,'full');
 		my $newLine = "${begin}! Swap $dataFull values ${val1} and ${val2}.\n${begin}${swap} = ${val1}\n${begin}${val1} = ${val2}\n${begin}${val2} = ${swap}${end}";
 		s/.*?#SWAP<.*?><.*?>#.*/$newLine/;
 	    }
@@ -433,6 +433,7 @@ sub processTemplate {
 	    # Field value
 	    while (/#FIELD<(.*?)><(.*?)><(.*?)>#/){
 		my $value = getFieldValue($1,$2,$3);
+		s/#FIELD<.*?><.*?><.*?>#/${value}/;
 	    }
 	    
 	    # Add line of text

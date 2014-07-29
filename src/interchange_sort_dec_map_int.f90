@@ -22,18 +22,22 @@ pure subroutine interchange_sort_dec_map_int(vec,map)
   integer, intent(inout) :: vec(:)
   integer, intent(inout) :: map(:)
   
+  
   ! Variables
   integer :: i
   integer :: j
   integer :: swap_value
-  
+  integer :: swap_value
+
   ! The interchange sort
   do i = 1,size(vec,1) - 1
      do j = i + 1,size(vec,1)
         if (vec(i) < vec(j)) then
+           ! Swap integer values vec(i) and vec(j).
            swap_value = vec(i)
            vec(i) = vec(j)
            vec(j) = swap_value
+            ! Swap integer values map(i) and map(j).
             swap_value = map(i)
             map(i) = map(j)
             map(j) = swap_value

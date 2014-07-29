@@ -46,6 +46,7 @@ subroutine insertion_sort_gen_map_dble(vec,map,ord)
   
   do i = size(vec,1) - 1,2,-1
      if (ord(double_precision_value,vec(i))) then
+        ! Swap double precision values double_precision_value and vec(i).
         swap_value = double_precision_value
         double_precision_value = vec(i)
         vec(i) = swap_value

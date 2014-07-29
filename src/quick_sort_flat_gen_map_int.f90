@@ -101,9 +101,7 @@ subroutine quick_sort_flat_gen_map_int(vec,map,ord)
                  
                  if (high > low) then
                     !If vec(low) must follow vec(high) than swap their values.
-                    swap_value = vec(low)
-                    vec(low) = vec(high)
-                    vec(high) = swap_value
+                    #SWAP<vec(low)><vec(high)>#
                     low = low + 1
                     high = high - 1
                  else

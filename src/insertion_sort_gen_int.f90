@@ -39,6 +39,7 @@ subroutine insertion_sort_gen_int(vec,ord)
   
   do i = size(vec,1) - 1,2,-1
      if (ord(integer_value,vec(i))) then
+        ! Swap integer values integer_value and vec(i).
         swap_value = integer_value
         integer_value = vec(i)
         vec(i) = swap_value

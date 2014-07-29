@@ -22,15 +22,17 @@ subroutine interchange_sort_gen_int(vec,ord)
   integer, intent(inout) :: vec(:)
   procedure(logical) :: ord
   
+  
   ! Variables
   integer :: i
   integer :: j
   integer :: swap_value
-  
+
   ! The interchange sort
   do i = 1,size(vec,1) - 1
      do j = i + 1,size(vec,1)
         if (ord(vec(i),vec(j))) then
+           ! Swap integer values vec(i) and vec(j).
            swap_value = vec(i)
            vec(i) = vec(j)
            vec(j) = swap_value

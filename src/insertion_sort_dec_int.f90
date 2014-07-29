@@ -32,6 +32,7 @@ pure subroutine insertion_sort_dec_int(vec)
   
   do i = size(vec,1) - 1,2,-1
      if (integer_value < vec(i)) then
+        ! Swap integer values integer_value and vec(i).
         swap_value = integer_value
         integer_value = vec(i)
         vec(i) = swap_value
